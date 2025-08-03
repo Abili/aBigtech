@@ -10,7 +10,7 @@ import './App.css';
 
 function App() {
   return (
-    <Router>
+    <Router basename="/aBigtech">
       <header style={{ 
         width: "100%", 
         padding: "0", 
