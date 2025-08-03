@@ -1,6 +1,4 @@
-import React from "react";
-
-export default function Logo({ size = 32 }: { size?: number }) {
+export default function Logo({ size = 40 }: { size?: number }) {
   return (
     <svg
       width={size}
