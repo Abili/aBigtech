@@ -1,91 +1,101 @@
-# React + TypeScript + Vite
+# eyClips - Movie & TV Show Identification
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+![eyClips Logo](https://abili.github.io/aBigtech/favicon.svg)
 
-Currently, two official plugins are available:
+**eyClips** is an intelligent movie and TV show identification app that helps you discover what you're watching with just a simple upload or screenshot.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🎬 What is eyClips?
 
-## Expanding the ESLint configuration
+eyClips uses advanced AI technology to identify movies and TV shows from video clips, screenshots, or images. Simply upload any visual content, and our app will provide you with:
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- **Movie/TV Show Title** - Instant identification
+- **Cast Information** - Complete cast details and character names
+- **Plot Summary** - Detailed synopsis and storyline
+- **Ratings & Reviews** - IMDb ratings and user reviews
+- **Streaming Availability** - Where to watch (Netflix, Amazon Prime, etc.)
+- **Similar Recommendations** - Discover related content you might enjoy
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## 📱 Available Platforms
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+### ✅ eyClips Web
+- **Status**: Live and available now
+- **Access**: [https://abili.github.io/aBigtech/](https://abili.github.io/aBigtech/)
+- **Features**: Full web experience with AI-powered identification
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+### ✅ eyClips Android
+- **Status**: Available on Google Play Store
+- **Features**: Native Android app with camera integration
+- **Download**: Search "eyClips" on Google Play Store
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### 🔄 eyClips iOS
+- **Status**: Coming Soon!
+- **Expected**: iOS version in development
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## 🚀 Key Features
 
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+- **🎯 Instant Recognition** - Upload any video clip or screenshot
+- **📸 Camera Integration** - Take photos directly from your device
+- **🎭 Cast & Crew Info** - Detailed information about actors and directors
+- **⭐ Ratings & Reviews** - IMDb integration for ratings and reviews
+- **📺 Streaming Links** - Find where to watch your identified content
+- **🔍 Smart Recommendations** - Discover similar movies and shows
+- **📱 Cross-Platform** - Available on web and mobile devices
 
-# eyClips Company Website
+## 🛡️ Privacy & Security
 
-Welcome to the official website for eyClips!
+We take your privacy seriously. eyClips is designed with privacy-first principles:
 
-## What We Offer
-- **eyClips-Web**: Our web version is live and available for all users.
-- **eyClips Android App**: Download now from Google Play.
-- **eyClips iOS App**: Coming soon!
+- **Minimal Data Collection** - We only collect what's necessary for identification
+- **Secure Processing** - All uploads are processed securely
+- **No Personal Storage** - Images are not permanently stored
+- **Transparent Privacy Policy** - Clear information about data usage
 
-## Privacy Policy
-Read our [Privacy Policy](./privacy-policy) to learn how we protect your data.
+## 🔗 Important Links
 
-## Account Deletion
-If you wish to delete your account, please visit our [Account Deletion Request](./delete-account) page for instructions.
+- **🏠 Homepage**: [https://abili.github.io/aBigtech/](https://abili.github.io/aBigtech/)
+- **🔒 Privacy Policy**: [https://abili.github.io/aBigtech/privacy-policy](https://abili.github.io/aBigtech/privacy-policy)
+- **📞 Contact Us**: [https://abili.github.io/aBigtech/contact-us](https://abili.github.io/aBigtech/contact-us)
+- **🗑️ Account Deletion**: Instructions available in the app and website
 
-## Deployment
-This site is built with React + Vite and is ready for deployment to GitHub Pages or Vercel.
+## 🌐 Website Technology
+
+This company website is built with modern web technologies:
+
+- **⚛️ React 19** - Modern React with latest features
+- **🚀 Vite** - Lightning-fast build tool
+- **📘 TypeScript** - Type-safe development
+- **🎨 Google Material Design** - Clean, professional styling
+- **📱 Responsive Design** - Works on all devices
+- **⚡ GitHub Pages** - Fast, reliable hosting
+
+## 📧 Support & Contact
+
+Need help or have questions?
+
+- **📧 Email Support** - Contact us through the website
+- **💬 In-App Support** - Available within the eyClips app
+- **🌐 Website Contact** - Visit our Contact Us page
+- **📱 App Store Reviews** - Leave feedback on your app store
+
+## 🏢 About Our Company
+
+eyClips is developed by a dedicated team focused on making entertainment discovery simple and enjoyable. We believe that identifying what you're watching shouldn't be a mystery - it should be instant and effortless.
+
+### Our Mission
+To make movie and TV show identification accessible, accurate, and instantaneous for everyone, everywhere.
+
+### Our Vision
+To become the world's most trusted and comprehensive entertainment identification platform.
+
+## 📜 Legal
+
+- **Terms of Service** - Available in the app
+- **Privacy Policy** - [View Privacy Policy](https://abili.github.io/aBigtech/privacy-policy)
+- **Account Deletion** - [Request Account Deletion](https://abili.github.io/aBigtech/contact-us)
+- **Google Play Compliance** - Fully compliant with Google Play policies
 
 ---
 
-© 2025 eyClips. All rights reserved.
+**© 2025 eyClips. All rights reserved.**
+
+*Discover what you're watching, instantly.*
