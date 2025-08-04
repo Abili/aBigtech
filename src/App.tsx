@@ -1,4 +1,5 @@
-import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import { useEffect } from "react";
+import { BrowserRouter as Router, Routes, Route, Link, useNavigate } from "react-router-dom";
 import Home from "./Home";
 import PrivacyPolicy from "./PrivacyPolicy";
 import DeleteAccount from "./DeleteAccount";
@@ -8,9 +9,24 @@ import Features from "./Features";
 import Logo from "./components/Logo";
 import './App.css';
 
+function RedirectHandler() {
+  const navigate = useNavigate();
+  
+  useEffect(() => {
+    const urlParams = new URLSearchParams(window.location.search);
+    const redirect = urlParams.get('redirect');
+    if (redirect) {
+      navigate(`/${redirect}`, { replace: true });
+    }
+  }, [navigate]);
+  
+  return null;
+}
+
 function App() {
   return (
     <Router basename="/aBigtech">
+      <RedirectHandler />
       <header style={{ 
         width: "100%", 
         padding: "0", 
