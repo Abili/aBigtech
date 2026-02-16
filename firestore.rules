@@ -1,0 +1,36 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    
+    // Helper functions
+    function isAuthenticated() {
+      return request.auth != null;
+    }
+    
+    function isAdmin() {
+      return request.auth.token.email == 'abiliisaac@gmail.com';
+    }
+
+    // Apps collection: Public read, Auth write (for stats/ratings)
+    match /apps/{appId} {
+      allow read: if true;
+      // Allow authenticated users to update stats (ratings, downloads)
+      allow write: if isAuthenticated();
+      
+      // Reviews subcollection: Public read, Auth write
+      match /reviews/{reviewId} {
+        allow read: if true;
+        allow create: if isAuthenticated() && 
+                     request.resource.data.userId == request.auth.uid;
+        allow update, delete: if isAuthenticated() && 
+                             (request.auth.uid == resource.data.userId || isAdmin());
+      }
+
+      // Downloads subcollection: Public create (for analytics), Admin read
+      match /downloads/{downloadId} {
+        allow create: if true; // Allow anyone to log (fixes cache issue), client sends userId if auth
+        allow read: if isAdmin(); // Only admin can view analytics
+      }
+    }
+  }
+}

@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://abigtech256.com/sitemap.xml
