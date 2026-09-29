@@ -64,19 +64,19 @@ export default function UpcomingApps() {
                 <span style={{
                     fontSize: '12px',
                     fontWeight: 600,
-                    color: '#f97316',
+                    color: 'var(--kelly)',
                     textTransform: 'uppercase',
                     letterSpacing: '1px',
-                    fontFamily: 'Inter, system-ui, sans-serif'
+                    fontFamily: 'IBM Plex Sans, sans-serif'
                 }}>
                     In The Pipeline
                 </span>
                 <h2 style={{
                     fontSize: 'clamp(24px, 4vw, 32px)',
                     fontWeight: 700,
-                    color: '#0a0a0a',
+                    color: 'var(--ink)',
                     marginTop: 8,
-                    fontFamily: 'Inter, system-ui, sans-serif'
+                    fontFamily: 'IBM Plex Sans, sans-serif'
                 }}>
                     Upcoming Projects
                 </h2>
@@ -87,8 +87,8 @@ export default function UpcomingApps() {
                     position: 'relative',
                     borderRadius: 24,
                     overflow: 'hidden',
-                    boxShadow: '0 20px 40px rgba(0,0,0,0.1)',
-                    background: 'linear-gradient(135deg, #f0fdf4 0%, #fff7ed 100%)', // Subtle gradient base
+                    boxShadow: '0 20px 40px rgba(0,0,0,0.35)',
+                    background: 'linear-gradient(135deg, var(--kelly-tint) 0%, var(--surface) 100%)', // Subtle gradient base
                     border: '1px solid rgba(255,255,255,0.5)'
                 }}
             >
@@ -121,13 +121,13 @@ export default function UpcomingApps() {
                         >
                             {/* Glassy Card Content */}
                             <div style={{
-                                background: 'rgba(255, 255, 255, 0.65)',
+                                background: 'rgba(11, 15, 12, 0.55)',
                                 backdropFilter: 'blur(16px)',
                                 WebkitBackdropFilter: 'blur(16px)',
                                 borderRadius: 32,
                                 padding: 'clamp(24px, 5vw, 40px)',
-                                border: '1px solid rgba(255, 255, 255, 0.8)',
-                                boxShadow: '0 8px 32px rgba(31, 38, 135, 0.07)',
+                                border: '1px solid var(--line)',
+                                boxShadow: '0 8px 32px rgba(0, 0, 0, 0.3)',
                                 maxWidth: 700,
                                 width: '100%',
                                 position: 'relative',
@@ -135,8 +135,8 @@ export default function UpcomingApps() {
                             }}>
                                 <span style={{
                                     display: 'inline-block',
-                                    background: '#0a0a0a',
-                                    color: '#fff',
+                                    background: 'var(--kelly)',
+                                    color: '#0a0a0a',
                                     padding: '6px 16px',
                                     borderRadius: 100,
                                     fontSize: '12px',
@@ -150,7 +150,7 @@ export default function UpcomingApps() {
                                 <div style={{
                                     fontSize: '64px',
                                     marginBottom: 16,
-                                    filter: 'drop-shadow(0 4px 12px rgba(0,0,0,0.1))'
+                                    filter: 'drop-shadow(0 4px 12px rgba(0,0,0,0.35))'
                                 }}>
                                     {app.icon}
                                 </div>
@@ -158,10 +158,10 @@ export default function UpcomingApps() {
                                 <h3 style={{
                                     fontSize: 'clamp(28px, 5vw, 40px)',
                                     fontWeight: 800,
-                                    color: '#0a0a0a',
+                                    color: 'var(--ink)',
                                     marginBottom: 8,
-                                    fontFamily: 'Inter, system-ui, sans-serif',
-                                    background: `-webkit-linear-gradient(45deg, #0a0a0a, #404040)`,
+                                    fontFamily: 'IBM Plex Sans, sans-serif',
+                                    background: `-webkit-linear-gradient(45deg, var(--ink), var(--ink-soft))`,
                                     WebkitBackgroundClip: 'text',
                                     WebkitTextFillColor: 'transparent'
                                 }}>
@@ -171,9 +171,9 @@ export default function UpcomingApps() {
                                 <div style={{
                                     fontSize: '18px',
                                     fontWeight: 600,
-                                    color: '#f97316',
+                                    color: 'var(--kelly)',
                                     marginBottom: 16,
-                                    fontFamily: 'Inter, system-ui, sans-serif'
+                                    fontFamily: 'IBM Plex Sans, sans-serif'
                                 }}>
                                     {app.tagline}
                                 </div>
@@ -184,7 +184,7 @@ export default function UpcomingApps() {
                                     color: '#525252',
                                     maxWidth: 500,
                                     margin: '0 auto',
-                                    fontFamily: 'Inter, system-ui, sans-serif'
+                                    fontFamily: 'IBM Plex Sans, sans-serif'
                                 }}>
                                     {app.description}
                                 </p>
@@ -219,7 +219,7 @@ export default function UpcomingApps() {
                                 width: activeIndex === i ? 24 : 8,
                                 height: 8,
                                 borderRadius: 4,
-                                background: activeIndex === i ? '#f97316' : 'rgba(0,0,0,0.2)',
+                                background: activeIndex === i ? 'var(--kelly)' : 'rgba(255,255,255,0.2)',
                                 border: 'none',
                                 padding: 0,
                                 cursor: 'pointer',

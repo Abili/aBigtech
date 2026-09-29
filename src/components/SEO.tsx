@@ -9,13 +9,13 @@ interface SEOProps {
 }
 
 export default function SEO({
-    title = 'aBig Tech - Secure Android APK Downloads',
-    description = 'Download verified, scanned, and safe Android APKs. Fast, secure, and always up-to-date.',
+    title = 'aBig Tech — Software Development, Mobile & Web Apps',
+    description = 'aBig Tech is a software development company building mobile apps, web apps, and custom software — and the team behind aBigTech Talent, remote developer placement.',
     image = '/logo.png', // Ensure you have a default OG image
     url = window.location.href,
     type = 'website'
 }: SEOProps) {
-    const siteTitle = title === 'aBig Tech - Secure Android APK Downloads' ? title : `${title} | aBig Tech`;
+    const siteTitle = title === 'aBig Tech — Software Development, Mobile & Web Apps' ? title : `${title} | aBig Tech`;
 
     return (
         <Helmet>

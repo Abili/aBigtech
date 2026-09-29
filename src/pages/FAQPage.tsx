@@ -19,15 +19,19 @@ const faqData: FAQCategory[] = [
         items: [
             {
                 question: 'What is aBig Tech?',
-                answer: 'aBig Tech is a software development and consultancy company that also distributes verified Android applications. We build custom mobile apps, software solutions, and provide technical consultancy services.'
+                answer: 'aBig Tech is a software development company. We build mobile apps, web apps, and custom software for businesses, and we also publish a few apps of our own directly for download here.'
             },
             {
-                question: 'Do I need to create an account?',
-                answer: 'No, downloads are completely free and require no registration. You can download any app directly without signing up.'
+                question: 'What is aBigTech Talent?',
+                answer: 'aBigTech Talent is a separate program we run that connects developers with companies abroad hiring remote talent — no fee, ever, to the developer. It has its own site at talent.abigtech256.com.'
             },
             {
-                question: 'Is aBig Tech free to use?',
-                answer: 'Yes, browsing and downloading apps from aBig Tech is completely free. There are no hidden fees or subscriptions.'
+                question: 'Do I need to create an account to download an app?',
+                answer: 'No, browsing and downloading our published apps is free and requires no registration. Signing in with Google is only needed if you want to leave a review.'
+            },
+            {
+                question: 'Do you take on client projects?',
+                answer: 'Yes. We build mobile apps, web apps, and custom software for businesses. Reach out through our Contact page to discuss a project.'
             }
         ]
     },
@@ -103,11 +107,11 @@ export default function FAQPage() {
     };
 
     return (
-        <main style={{ background: '#f8fafc', minHeight: '100vh' }}>
+        <main style={{ background: 'var(--surface)', minHeight: '100vh' }}>
             {/* Header */}
             <section style={{
-                background: '#fff',
-                borderBottom: '1px solid #e5e5e5',
+                background: 'var(--paper)',
+                borderBottom: '1px solid var(--line)',
                 padding: 'clamp(48px, 8vw, 80px) 24px',
                 textAlign: 'center'
             }}>
@@ -116,26 +120,26 @@ export default function FAQPage() {
                         display: 'inline-flex',
                         alignItems: 'center',
                         gap: 6,
-                        color: '#f97316',
+                        color: 'var(--kelly)',
                         textDecoration: 'none',
                         fontSize: '14px',
                         fontWeight: 500,
                         marginBottom: 16,
-                        fontFamily: 'Inter, system-ui, sans-serif'
+                        fontFamily: 'IBM Plex Sans, sans-serif'
                     }}>
                         ← Back to Support
                     </Link>
                     <h1 style={{
                         fontSize: 'clamp(32px, 7vw, 48px)',
                         fontWeight: 700,
-                        color: '#0a0a0a',
+                        color: 'var(--ink)',
                         marginBottom: 16,
-                        fontFamily: 'Inter, system-ui, sans-serif'
+                        fontFamily: 'IBM Plex Sans, sans-serif'
                     }}>
                         Frequently Asked Questions
                     </h1>
                     <p style={{
-                        color: '#525252',
+                        color: 'var(--ink-soft)',
                         fontSize: '16px',
                         lineHeight: 1.6
                     }}>
@@ -155,18 +159,18 @@ export default function FAQPage() {
                                 gap: 10,
                                 fontSize: '20px',
                                 fontWeight: 600,
-                                color: '#0a0a0a',
+                                color: 'var(--ink)',
                                 marginBottom: 16,
-                                fontFamily: 'Inter, system-ui, sans-serif'
+                                fontFamily: 'IBM Plex Sans, sans-serif'
                             }}>
                                 <span>{category.icon}</span>
                                 {category.title}
                             </h2>
 
                             <div style={{
-                                background: '#fff',
+                                background: 'var(--paper)',
                                 borderRadius: 16,
-                                border: '1px solid #e5e5e5',
+                                border: '1px solid var(--line)',
                                 overflow: 'hidden'
                             }}>
                                 {category.items.map((item, index) => {
@@ -175,7 +179,7 @@ export default function FAQPage() {
 
                                     return (
                                         <div key={index} style={{
-                                            borderTop: index > 0 ? '1px solid #e5e5e5' : 'none'
+                                            borderTop: index > 0 ? '1px solid var(--line)' : 'none'
                                         }}>
                                             <button
                                                 onClick={() => toggleItem(itemId)}
@@ -194,14 +198,14 @@ export default function FAQPage() {
                                                 <span style={{
                                                     fontSize: '15px',
                                                     fontWeight: 500,
-                                                    color: '#0a0a0a',
-                                                    fontFamily: 'Inter, system-ui, sans-serif'
+                                                    color: 'var(--ink)',
+                                                    fontFamily: 'IBM Plex Sans, sans-serif'
                                                 }}>
                                                     {item.question}
                                                 </span>
                                                 <span style={{
                                                     fontSize: '18px',
-                                                    color: '#f97316',
+                                                    color: 'var(--kelly)',
                                                     transition: 'transform 0.2s ease',
                                                     transform: isOpen ? 'rotate(180deg)' : 'rotate(0deg)'
                                                 }}>
@@ -212,9 +216,9 @@ export default function FAQPage() {
                                                 <div style={{
                                                     padding: '0 20px 18px',
                                                     fontSize: '14px',
-                                                    color: '#525252',
+                                                    color: 'var(--ink-soft)',
                                                     lineHeight: 1.7,
-                                                    fontFamily: 'Inter, system-ui, sans-serif'
+                                                    fontFamily: 'IBM Plex Sans, sans-serif'
                                                 }}>
                                                     {item.answer}
                                                 </div>
@@ -230,8 +234,8 @@ export default function FAQPage() {
 
             {/* Still need help? */}
             <section style={{
-                background: '#fff',
-                borderTop: '1px solid #e5e5e5',
+                background: 'var(--paper)',
+                borderTop: '1px solid var(--line)',
                 padding: '48px 24px',
                 textAlign: 'center'
             }}>
@@ -239,14 +243,14 @@ export default function FAQPage() {
                     <h2 style={{
                         fontSize: '24px',
                         fontWeight: 600,
-                        color: '#0a0a0a',
+                        color: 'var(--ink)',
                         marginBottom: 12,
-                        fontFamily: 'Inter, system-ui, sans-serif'
+                        fontFamily: 'IBM Plex Sans, sans-serif'
                     }}>
                         Still have questions?
                     </h2>
                     <p style={{
-                        color: '#525252',
+                        color: 'var(--ink-soft)',
                         fontSize: '15px',
                         marginBottom: 24
                     }}>
@@ -254,14 +258,14 @@ export default function FAQPage() {
                     </p>
                     <Link to="/support/contact" style={{
                         display: 'inline-flex',
-                        background: '#f97316',
-                        color: '#fff',
+                        background: 'var(--kelly)',
+                        color: '#0a0a0a',
                         padding: '14px 28px',
                         borderRadius: 10,
                         textDecoration: 'none',
                         fontWeight: 600,
                         fontSize: '15px',
-                        fontFamily: 'Inter, system-ui, sans-serif'
+                        fontFamily: 'IBM Plex Sans, sans-serif'
                     }}>
                         Contact Us
                     </Link>

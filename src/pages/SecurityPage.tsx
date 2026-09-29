@@ -2,13 +2,13 @@ import { Link } from 'react-router-dom';
 
 export default function SecurityPage() {
     return (
-        <main style={{ background: '#fff' }}>
+        <main style={{ background: 'var(--paper)' }}>
             {/* Hero */}
             <section style={{
-                background: '#fafafa',
+                background: 'var(--surface)',
                 padding: 'clamp(60px, 10vw, 100px) 24px',
-                color: '#0a0a0a',
-                borderBottom: '1px solid #e5e5e5'
+                color: 'var(--ink)',
+                borderBottom: '1px solid var(--line)'
             }}>
                 <div style={{ maxWidth: 800, margin: '0 auto', textAlign: 'center' }}>
                     <div style={{
@@ -21,19 +21,19 @@ export default function SecurityPage() {
                         fontSize: 'clamp(32px, 7vw, 52px)',
                         fontWeight: 700,
                         marginBottom: 20,
-                        fontFamily: 'Inter, system-ui, sans-serif',
-                        color: '#0a0a0a'
+                        fontFamily: 'IBM Plex Sans, sans-serif',
+                        color: 'var(--ink)'
                     }}>
                         Security & Verification
                     </h1>
                     <p style={{
                         fontSize: 'clamp(16px, 3vw, 20px)',
-                        color: '#525252',
+                        color: 'var(--ink-soft)',
                         lineHeight: 1.6,
                         maxWidth: 600,
                         margin: '0 auto'
                     }}>
-                        Transparency in how we verify, scan, and secure every application on our platform.
+                        Security is built into how we develop software, and into every app we publish directly — here's how we verify, scan, and secure them.
                     </p>
                 </div>
             </section>
@@ -46,9 +46,9 @@ export default function SecurityPage() {
                     <h2 style={{
                         fontSize: 'clamp(24px, 5vw, 32px)',
                         fontWeight: 700,
-                        color: '#0f172a',
+                        color: 'var(--ink)',
                         marginBottom: 32,
-                        fontFamily: 'Inter, system-ui, sans-serif'
+                        fontFamily: 'IBM Plex Sans, sans-serif'
                     }}>
                         Our Security Commitment
                     </h2>
@@ -83,14 +83,14 @@ export default function SecurityPage() {
                                 display: 'flex',
                                 gap: 20,
                                 padding: 24,
-                                background: '#f8fafc',
+                                background: 'var(--surface)',
                                 borderRadius: 12,
-                                border: '1px solid #e2e8f0'
+                                border: '1px solid var(--line)'
                             }}>
                                 <div style={{
                                     width: 48,
                                     height: 48,
-                                    background: 'rgba(249, 115, 22, 0.1)',
+                                    background: 'var(--kelly-tint)',
                                     borderRadius: 12,
                                     display: 'flex',
                                     alignItems: 'center',
@@ -104,17 +104,17 @@ export default function SecurityPage() {
                                     <h3 style={{
                                         fontSize: '18px',
                                         fontWeight: 600,
-                                        color: '#0f172a',
+                                        color: 'var(--ink)',
                                         marginBottom: 8,
-                                        fontFamily: 'Inter, system-ui, sans-serif'
+                                        fontFamily: 'IBM Plex Sans, sans-serif'
                                     }}>
                                         {item.title}
                                     </h3>
                                     <p style={{
                                         fontSize: '15px',
-                                        color: '#64748b',
+                                        color: 'var(--ink-soft)',
                                         lineHeight: 1.6,
-                                        fontFamily: 'Inter, system-ui, sans-serif',
+                                        fontFamily: 'IBM Plex Sans, sans-serif',
                                         margin: 0
                                     }}>
                                         {item.description}
@@ -128,21 +128,21 @@ export default function SecurityPage() {
 
             {/* What We Check */}
             <section style={{
-                background: '#f8fafc',
+                background: 'var(--surface)',
                 padding: 'clamp(48px, 10vw, 80px) 24px'
             }}>
                 <div style={{ maxWidth: 900, margin: '0 auto' }}>
                     <h2 style={{
                         fontSize: 'clamp(24px, 5vw, 32px)',
                         fontWeight: 700,
-                        color: '#0f172a',
+                        color: 'var(--ink)',
                         marginBottom: 16,
-                        fontFamily: 'Inter, system-ui, sans-serif'
+                        fontFamily: 'IBM Plex Sans, sans-serif'
                     }}>
                         Verification Process
                     </h2>
                     <p style={{
-                        color: '#64748b',
+                        color: 'var(--ink-soft)',
                         fontSize: '16px',
                         marginBottom: 32,
                         maxWidth: 600
@@ -167,20 +167,20 @@ export default function SecurityPage() {
                                 display: 'flex',
                                 gap: 20,
                                 padding: '24px 0',
-                                borderBottom: index < arr.length - 1 ? '1px solid #e2e8f0' : 'none'
+                                borderBottom: index < arr.length - 1 ? '1px solid var(--line)' : 'none'
                             }}>
                                 <div style={{
                                     width: 40,
                                     height: 40,
-                                    background: '#f97316',
-                                    color: '#fff',
+                                    background: 'var(--kelly)',
+                                    color: '#0a0a0a',
                                     borderRadius: '50%',
                                     display: 'flex',
                                     alignItems: 'center',
                                     justifyContent: 'center',
                                     fontWeight: 700,
                                     fontSize: '16px',
-                                    fontFamily: 'Inter, system-ui, sans-serif',
+                                    fontFamily: 'IBM Plex Sans, sans-serif',
                                     flexShrink: 0
                                 }}>
                                     {item.step}
@@ -189,16 +189,16 @@ export default function SecurityPage() {
                                     <h3 style={{
                                         fontSize: '16px',
                                         fontWeight: 600,
-                                        color: '#0f172a',
+                                        color: 'var(--ink)',
                                         marginBottom: 4,
-                                        fontFamily: 'Inter, system-ui, sans-serif'
+                                        fontFamily: 'IBM Plex Sans, sans-serif'
                                     }}>
                                         {item.title}
                                     </h3>
                                     <p style={{
                                         fontSize: '14px',
-                                        color: '#64748b',
-                                        fontFamily: 'Inter, system-ui, sans-serif',
+                                        color: 'var(--ink-soft)',
+                                        fontFamily: 'IBM Plex Sans, sans-serif',
                                         margin: 0
                                     }}>
                                         {item.desc}
@@ -218,14 +218,14 @@ export default function SecurityPage() {
                     <h2 style={{
                         fontSize: 'clamp(24px, 5vw, 32px)',
                         fontWeight: 700,
-                        color: '#0f172a',
+                        color: 'var(--ink)',
                         marginBottom: 16,
-                        fontFamily: 'Inter, system-ui, sans-serif'
+                        fontFamily: 'IBM Plex Sans, sans-serif'
                     }}>
                         Verify It Yourself
                     </h2>
                     <p style={{
-                        color: '#64748b',
+                        color: 'var(--ink-soft)',
                         fontSize: '16px',
                         marginBottom: 32,
                         maxWidth: 600
@@ -239,17 +239,17 @@ export default function SecurityPage() {
                         padding: 24,
                         fontFamily: 'monospace',
                         fontSize: '14px',
-                        color: '#94a3b8',
+                        color: 'var(--ink-soft)',
                         overflowX: 'auto'
                     }}>
-                        <div style={{ color: '#64748b', marginBottom: 8 }}># Linux / macOS</div>
-                        <div style={{ color: '#e2e8f0' }}>sha256sum downloaded-app.apk</div>
-                        <div style={{ color: '#64748b', marginTop: 16, marginBottom: 8 }}># Windows (PowerShell)</div>
-                        <div style={{ color: '#e2e8f0' }}>Get-FileHash downloaded-app.apk -Algorithm SHA256</div>
+                        <div style={{ color: 'var(--ink-soft)', marginBottom: 8 }}># Linux / macOS</div>
+                        <div style={{ color: 'var(--line)' }}>sha256sum downloaded-app.apk</div>
+                        <div style={{ color: 'var(--ink-soft)', marginTop: 16, marginBottom: 8 }}># Windows (PowerShell)</div>
+                        <div style={{ color: 'var(--line)' }}>Get-FileHash downloaded-app.apk -Algorithm SHA256</div>
                     </div>
 
                     <p style={{
-                        color: '#64748b',
+                        color: 'var(--ink-soft)',
                         fontSize: '14px',
                         marginTop: 16
                     }}>
@@ -260,7 +260,7 @@ export default function SecurityPage() {
 
             {/* Report */}
             <section style={{
-                background: '#fef2f2',
+                background: 'rgba(179, 38, 30, 0.1)',
                 padding: 'clamp(48px, 10vw, 80px) 24px'
             }}>
                 <div style={{
@@ -271,14 +271,14 @@ export default function SecurityPage() {
                     <h2 style={{
                         fontSize: 'clamp(20px, 4vw, 28px)',
                         fontWeight: 700,
-                        color: '#991b1b',
+                        color: 'var(--amber)',
                         marginBottom: 16,
-                        fontFamily: 'Inter, system-ui, sans-serif'
+                        fontFamily: 'IBM Plex Sans, sans-serif'
                     }}>
                         Report a Security Issue
                     </h2>
                     <p style={{
-                        color: '#b91c1c',
+                        color: 'var(--ink-soft)',
                         fontSize: '15px',
                         marginBottom: 24,
                         lineHeight: 1.6
@@ -287,14 +287,14 @@ export default function SecurityPage() {
                     </p>
                     <Link to="/support/contact" style={{
                         display: 'inline-flex',
-                        background: '#dc2626',
-                        color: '#fff',
+                        background: 'var(--amber)',
+                        color: '#ffffff',
                         padding: '12px 24px',
                         borderRadius: 8,
                         textDecoration: 'none',
                         fontWeight: 600,
                         fontSize: '14px',
-                        fontFamily: 'Inter, system-ui, sans-serif'
+                        fontFamily: 'IBM Plex Sans, sans-serif'
                     }}>
                         Report Issue
                     </Link>

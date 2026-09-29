@@ -202,14 +202,14 @@ export default function AdminPage() {
                 alignItems: 'center',
                 justifyContent: 'center',
                 minHeight: '80vh',
-                fontFamily: 'Inter, system-ui, sans-serif'
+                fontFamily: 'IBM Plex Sans, sans-serif'
             }}>
                 <h1 style={{ marginBottom: 24 }}>Admin Login</h1>
                 <button
                     onClick={handleLogin}
                     style={{
-                        background: '#f97316',
-                        color: 'white',
+                        background: 'var(--kelly)',
+                        color: '#0a0a0a',
                         border: 'none',
                         padding: '12px 24px',
                         borderRadius: 8,
@@ -226,17 +226,17 @@ export default function AdminPage() {
 
     if (user.email !== ADMIN_EMAIL) {
         return (
-            <div style={{ padding: 40, textAlign: 'center', fontFamily: 'Inter, system-ui, sans-serif' }}>
+            <div style={{ padding: 40, textAlign: 'center', fontFamily: 'IBM Plex Sans, sans-serif' }}>
                 <h1 style={{ color: '#ef4444' }}>Access Denied</h1>
                 <p>You are not authorized to view this page.</p>
-                <div style={{ marginTop: 16, color: '#525252' }}>Signed in as: {user.email}</div>
+                <div style={{ marginTop: 16, color: 'var(--ink-soft)' }}>Signed in as: {user.email}</div>
                 <button
                     onClick={handleLogout}
                     style={{
                         marginTop: 24,
                         padding: '8px 16px',
-                        background: '#f5f5f5',
-                        border: '1px solid #e5e5e5',
+                        background: 'var(--surface)',
+                        border: '1px solid var(--line)',
                         borderRadius: 6,
                         cursor: 'pointer'
                     }}
@@ -252,7 +252,7 @@ export default function AdminPage() {
             maxWidth: 1200,
             margin: '0 auto',
             padding: '40px 24px',
-            fontFamily: 'Inter, system-ui, sans-serif'
+            fontFamily: 'IBM Plex Sans, sans-serif'
         }}>
             <div style={{
                 display: 'flex',
@@ -262,20 +262,20 @@ export default function AdminPage() {
             }}>
                 <h1 style={{ fontSize: '28px', fontWeight: 700 }}>Admin Dashboard</h1>
                 <div style={{ display: 'flex', alignItems: 'center', gap: 16 }}>
-                    <span style={{ fontSize: '14px', color: '#525252' }}>{user.email}</span>
+                    <span style={{ fontSize: '14px', color: 'var(--ink-soft)' }}>{user.email}</span>
                     <button
                         onClick={handleLogout}
                         style={{
                             padding: '8px 16px',
-                            background: 'white',
-                            border: '1px solid #e5e5e5',
+                            background: 'var(--paper)',
+                            border: '1px solid var(--line)',
                             borderRadius: 6,
                             cursor: 'pointer',
                             fontSize: '14px',
-                            color: '#0a0a0a',
+                            color: 'var(--ink)',
                             fontWeight: 500
                         }}
-                        onMouseOver={(e) => e.currentTarget.style.background = '#f5f5f5'}
+                        onMouseOver={(e) => e.currentTarget.style.background = 'var(--surface)'}
                         onMouseOut={(e) => e.currentTarget.style.background = 'white'}
                     >
                         Sign Out
@@ -322,15 +322,15 @@ export default function AdminPage() {
             </div>
 
             {/* Tabs */}
-            <div style={{ display: 'flex', gap: 24, marginBottom: 32, borderBottom: '1px solid #e5e5e5' }}>
+            <div style={{ display: 'flex', gap: 24, marginBottom: 32, borderBottom: '1px solid var(--line)' }}>
                 <button
                     onClick={() => setAnalyticsTab('overview')}
                     style={{
                         padding: '12px 4px',
                         background: 'none',
                         border: 'none',
-                        borderBottom: analyticsTab === 'overview' ? '2px solid #f97316' : '2px solid transparent',
-                        color: analyticsTab === 'overview' ? '#f97316' : '#737373',
+                        borderBottom: analyticsTab === 'overview' ? '2px solid var(--kelly)' : '2px solid transparent',
+                        color: analyticsTab === 'overview' ? 'var(--kelly)' : 'var(--ink-soft)',
                         fontWeight: 600,
                         cursor: 'pointer',
                         fontSize: '15px',
@@ -345,8 +345,8 @@ export default function AdminPage() {
                         padding: '12px 4px',
                         background: 'none',
                         border: 'none',
-                        borderBottom: analyticsTab === 'downloads' ? '2px solid #f97316' : '2px solid transparent',
-                        color: analyticsTab === 'downloads' ? '#f97316' : '#737373',
+                        borderBottom: analyticsTab === 'downloads' ? '2px solid var(--kelly)' : '2px solid transparent',
+                        color: analyticsTab === 'downloads' ? 'var(--kelly)' : 'var(--ink-soft)',
                         fontWeight: 600,
                         cursor: 'pointer',
                         fontSize: '15px',
@@ -369,49 +369,49 @@ export default function AdminPage() {
                     }}>
                         {stats.length > 0 ? stats.map((app: any) => (
                             <div key={app.id} style={{
-                                background: 'white',
+                                background: 'var(--paper)',
                                 padding: 24,
                                 borderRadius: 16,
-                                border: '1px solid #e5e5e5',
+                                border: '1px solid var(--line)',
                                 boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1)'
                             }}>
                                 <h3 style={{ fontSize: '18px', fontWeight: 600, marginBottom: 8, textTransform: 'capitalize' }}>
                                     {app.id}
                                 </h3>
-                                <div style={{ fontSize: '32px', fontWeight: 700, color: '#f97316' }}>
+                                <div style={{ fontSize: '32px', fontWeight: 700, color: 'var(--kelly)' }}>
                                     {(app.downloads || 0).toLocaleString()}
                                 </div>
-                                <div style={{ fontSize: '14px', color: '#737373', marginTop: 4 }}>
+                                <div style={{ fontSize: '14px', color: 'var(--ink-soft)', marginTop: 4 }}>
                                     Total Downloads
                                 </div>
                             </div>
                         )) : (
-                            <div style={{ color: '#737373' }}>Loading stats...</div>
+                            <div style={{ color: 'var(--ink-soft)' }}>Loading stats...</div>
                         )}
                     </div>
 
                     {/* Version Management Section */}
                     <h2 style={{ fontSize: '20px', fontWeight: 600, marginBottom: 16 }}>Manage App Version</h2>
                     <div style={{
-                        background: 'white',
+                        background: 'var(--paper)',
                         padding: 32,
                         borderRadius: 16,
-                        border: '1px solid #e5e5e5',
+                        border: '1px solid var(--line)',
                         boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1)'
                     }}>
                         {/* Current Version Display */}
                         {versionInfo && (
                             <div style={{
-                                background: '#f5f5f5',
+                                background: 'var(--surface)',
                                 padding: 16,
                                 borderRadius: 12,
                                 marginBottom: 24
                             }}>
-                                <div style={{ fontSize: '14px', color: '#737373', marginBottom: 8 }}>Current Version</div>
+                                <div style={{ fontSize: '14px', color: 'var(--ink-soft)', marginBottom: 8 }}>Current Version</div>
                                 <div style={{ display: 'flex', gap: 24, flexWrap: 'wrap' }}>
                                     <div>
                                         <span style={{ fontWeight: 600 }}>v{versionInfo.latestVersionName}</span>
-                                        <span style={{ color: '#737373', marginLeft: 8 }}>(Code: {versionInfo.latestVersionCode})</span>
+                                        <span style={{ color: 'var(--ink-soft)', marginLeft: 8 }}>(Code: {versionInfo.latestVersionCode})</span>
                                     </div>
                                     {versionInfo.forceUpdate && (
                                         <span style={{ background: '#fef2f2', color: '#ef4444', padding: '2px 8px', borderRadius: 4, fontSize: '12px' }}>
@@ -437,7 +437,7 @@ export default function AdminPage() {
                                         style={{
                                             width: '100%',
                                             padding: '10px 12px',
-                                            border: '1px solid #e5e5e5',
+                                            border: '1px solid var(--line)',
                                             borderRadius: 8,
                                             fontSize: '14px'
                                         }}
@@ -455,7 +455,7 @@ export default function AdminPage() {
                                         style={{
                                             width: '100%',
                                             padding: '10px 12px',
-                                            border: '1px solid #e5e5e5',
+                                            border: '1px solid var(--line)',
                                             borderRadius: 8,
                                             fontSize: '14px'
                                         }}
@@ -475,7 +475,7 @@ export default function AdminPage() {
                                     style={{
                                         width: '100%',
                                         padding: '10px 12px',
-                                        border: '1px solid #e5e5e5',
+                                        border: '1px solid var(--line)',
                                         borderRadius: 8,
                                         fontSize: '14px',
                                         resize: 'vertical'
@@ -495,14 +495,14 @@ export default function AdminPage() {
                                     style={{
                                         width: '100%',
                                         padding: '10px 12px',
-                                        border: '1px solid #e5e5e5',
+                                        border: '1px solid var(--line)',
                                         borderRadius: 8,
                                         fontSize: '14px',
-                                        background: 'white'
+                                        background: 'var(--paper)'
                                     }}
                                 />
                                 {apkFile && (
-                                    <div style={{ fontSize: '13px', color: '#737373', marginTop: 6 }}>
+                                    <div style={{ fontSize: '13px', color: 'var(--ink-soft)', marginTop: 6 }}>
                                         Selected: {apkFile.name} ({(apkFile.size / (1024 * 1024)).toFixed(2)} MB)
                                     </div>
                                 )}
@@ -524,17 +524,17 @@ export default function AdminPage() {
                             {/* Upload Progress */}
                             {uploading && (
                                 <div style={{
-                                    background: '#f5f5f5',
+                                    background: 'var(--surface)',
                                     borderRadius: 8,
                                     overflow: 'hidden'
                                 }}>
                                     <div style={{
                                         width: `${uploadProgress}%`,
                                         height: 8,
-                                        background: 'linear-gradient(90deg, #f97316, #ea580c)',
+                                        background: 'linear-gradient(90deg, var(--kelly), var(--kelly-deep))',
                                         transition: 'width 0.3s ease'
                                     }} />
-                                    <div style={{ padding: '8px 12px', fontSize: '13px', color: '#525252' }}>
+                                    <div style={{ padding: '8px 12px', fontSize: '13px', color: 'var(--ink-soft)' }}>
                                         Uploading... {uploadProgress}%
                                     </div>
                                 </div>
@@ -545,8 +545,8 @@ export default function AdminPage() {
                                 disabled={uploading}
                                 style={{
                                     padding: '12px 24px',
-                                    background: uploading ? '#d4d4d4' : 'linear-gradient(135deg, #f97316, #ea580c)',
-                                    color: 'white',
+                                    background: uploading ? 'var(--line)' : 'linear-gradient(135deg, var(--kelly), var(--kelly-deep))',
+                                    color: '#0a0a0a',
                                     border: 'none',
                                     borderRadius: 8,
                                     fontSize: '16px',
@@ -563,7 +563,7 @@ export default function AdminPage() {
             ) : (
                 <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: 24 }}>
                     {/* Top Countries Card */}
-                    <div style={{ background: 'white', padding: 24, borderRadius: 16, border: '1px solid #e5e5e5', boxShadow: '0 4px 6px -1px rgba(0,0,0,0.1)' }}>
+                    <div style={{ background: 'var(--paper)', padding: 24, borderRadius: 16, border: '1px solid var(--line)', boxShadow: '0 4px 6px -1px rgba(0,0,0,0.1)' }}>
                         <h3 style={{ fontSize: '18px', fontWeight: 600, marginBottom: 16 }}>Top Countries</h3>
                         <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
                             {countryStats.map((stat, i) => (
@@ -574,18 +574,18 @@ export default function AdminPage() {
                                     </div>
                                     <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
                                         <div style={{ height: 6, width: 64, background: '#f3f4f6', borderRadius: 10, overflow: 'hidden' }}>
-                                            <div style={{ height: '100%', width: `${(stat.count / Math.max(...countryStats.map(s => s.count))) * 100}%`, background: '#f97316' }} />
+                                            <div style={{ height: '100%', width: `${(stat.count / Math.max(...countryStats.map(s => s.count))) * 100}%`, background: 'var(--kelly)' }} />
                                         </div>
-                                        <span style={{ fontSize: '13px', color: '#525252', minWidth: 24, textAlign: 'right' }}>{stat.count}</span>
+                                        <span style={{ fontSize: '13px', color: 'var(--ink-soft)', minWidth: 24, textAlign: 'right' }}>{stat.count}</span>
                                     </div>
                                 </div>
                             ))}
-                            {countryStats.length === 0 && <div style={{ color: '#737373', fontStyle: 'italic' }}>No data yet</div>}
+                            {countryStats.length === 0 && <div style={{ color: 'var(--ink-soft)', fontStyle: 'italic' }}>No data yet</div>}
                         </div>
                     </div>
 
                     {/* Version Popularity Card */}
-                    <div style={{ background: 'white', padding: 24, borderRadius: 16, border: '1px solid #e5e5e5', boxShadow: '0 4px 6px -1px rgba(0,0,0,0.1)' }}>
+                    <div style={{ background: 'var(--paper)', padding: 24, borderRadius: 16, border: '1px solid var(--line)', boxShadow: '0 4px 6px -1px rgba(0,0,0,0.1)' }}>
                         <h3 style={{ fontSize: '18px', fontWeight: 600, marginBottom: 16 }}>Downloads by Version</h3>
                         <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
                             {versionStats.map((stat, i) => (
@@ -594,8 +594,8 @@ export default function AdminPage() {
                                         <div style={{
                                             width: 32, height: 32,
                                             borderRadius: 8,
-                                            background: i === 0 ? '#fff7ed' : '#f5f5f5',
-                                            color: i === 0 ? '#ea580c' : '#525252',
+                                            background: i === 0 ? '#fff7ed' : 'var(--surface)',
+                                            color: i === 0 ? 'var(--kelly-deep)' : 'var(--ink-soft)',
                                             display: 'flex', alignItems: 'center', justifyContent: 'center',
                                             fontWeight: 600, fontSize: '13px'
                                         }}>
@@ -603,34 +603,34 @@ export default function AdminPage() {
                                         </div>
                                         <div style={{ display: 'flex', flexDirection: 'column' }}>
                                             <span style={{ fontWeight: 500, fontSize: '14px' }}>Version {stat.version}</span>
-                                            {i === 0 && <span style={{ fontSize: '11px', color: '#ea580c', fontWeight: 500 }}>Latest / Most Popular</span>}
+                                            {i === 0 && <span style={{ fontSize: '11px', color: 'var(--kelly-deep)', fontWeight: 500 }}>Latest / Most Popular</span>}
                                         </div>
                                     </div>
                                     <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
                                         <div style={{ height: 6, width: 64, background: '#f3f4f6', borderRadius: 10, overflow: 'hidden' }}>
-                                            <div style={{ height: '100%', width: `${(stat.count / Math.max(...versionStats.map(s => s.count))) * 100}%`, background: i === 0 ? '#f97316' : '#9ca3af' }} />
+                                            <div style={{ height: '100%', width: `${(stat.count / Math.max(...versionStats.map(s => s.count))) * 100}%`, background: i === 0 ? 'var(--kelly)' : '#9ca3af' }} />
                                         </div>
-                                        <span style={{ fontSize: '13px', color: '#525252', minWidth: 24, textAlign: 'right' }}>{stat.count}</span>
+                                        <span style={{ fontSize: '13px', color: 'var(--ink-soft)', minWidth: 24, textAlign: 'right' }}>{stat.count}</span>
                                     </div>
                                 </div>
                             ))}
-                            {versionStats.length === 0 && <div style={{ color: '#737373', fontStyle: 'italic' }}>No version data yet</div>}
+                            {versionStats.length === 0 && <div style={{ color: 'var(--ink-soft)', fontStyle: 'italic' }}>No version data yet</div>}
                         </div>
                     </div>
 
                     {/* Recent Downloads Feed */}
-                    <div style={{ background: 'white', padding: 24, borderRadius: 16, border: '1px solid #e5e5e5', boxShadow: '0 4px 6px -1px rgba(0,0,0,0.1)', gridColumn: '1 / -1' }}>
+                    <div style={{ background: 'var(--paper)', padding: 24, borderRadius: 16, border: '1px solid var(--line)', boxShadow: '0 4px 6px -1px rgba(0,0,0,0.1)', gridColumn: '1 / -1' }}>
                         <h3 style={{ fontSize: '18px', fontWeight: 600, marginBottom: 16 }}>Recent Downloads</h3>
                         <div style={{ display: 'flex', flexDirection: 'column', gap: 0 }}>
                             {downloadLogs.map((log) => (
-                                <div key={log.id} style={{ padding: '12px 0', borderBottom: '1px solid #f5f5f5', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                                <div key={log.id} style={{ padding: '12px 0', borderBottom: '1px solid var(--surface)', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                                     <div>
                                         <div style={{ fontWeight: 500, fontSize: '14px' }}>{log.city}, {log.country}</div>
-                                        <div style={{ fontSize: '12px', color: '#737373' }}>
-                                            {log.timestamp ? log.timestamp.toLocaleString() : 'Just now'} • <span style={{ color: '#ea580c', fontWeight: 500 }}>v{log.version}</span>
+                                        <div style={{ fontSize: '12px', color: 'var(--ink-soft)' }}>
+                                            {log.timestamp ? log.timestamp.toLocaleString() : 'Just now'} • <span style={{ color: 'var(--kelly-deep)', fontWeight: 500 }}>v{log.version}</span>
                                         </div>
                                         {log.userEmail && (
-                                            <div style={{ fontSize: '11px', color: '#525252', marginTop: 2 }}>
+                                            <div style={{ fontSize: '11px', color: 'var(--ink-soft)', marginTop: 2 }}>
                                                 👤 {log.userEmail}
                                             </div>
                                         )}
@@ -638,7 +638,7 @@ export default function AdminPage() {
                                     <div style={{ fontSize: '12px', color: '#9ca3af' }}>{log.ip}</div>
                                 </div>
                             ))}
-                            {downloadLogs.length === 0 && <div style={{ color: '#737373', fontStyle: 'italic' }}>No downloads recorded yet</div>}
+                            {downloadLogs.length === 0 && <div style={{ color: 'var(--ink-soft)', fontStyle: 'italic' }}>No downloads recorded yet</div>}
                         </div>
                     </div>
                 </div>

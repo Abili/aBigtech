@@ -1,90 +1,25 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Roboto+Mono&display=swap');
+/* Shared color/font tokens live in index.css — this file is utility classes only */
 
-:root {
-  /* Primary Colors */
-  --color-primary: #f97316;
-  --color-primary-light: #fb923c;
-  --color-primary-dark: #ea580c;
-
-  /* Neutrals */
-  --color-black: #0a0a0a;
-  --color-gray-900: #171717;
-  --color-gray-800: #262626;
-  --color-gray-700: #404040;
-  --color-gray-600: #525252;
-  --color-gray-500: #737373;
-  --color-gray-400: #a3a3a3;
-  --color-gray-300: #d4d4d4;
-  --color-gray-200: #e5e5e5;
-  --color-gray-100: #f5f5f5;
-  --color-white: #ffffff;
-
-  /* Status */
-  --color-success: #22c55e;
-  --color-warning: #eab308;
-  --color-error: #ef4444;
-
-  /* Spacing */
-  --max-width: 1280px;
-  --radius-sm: 8px;
-  --radius-md: 12px;
-  --radius-lg: 20px;
-  --radius-xl: 28px;
-}
-
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
-html {
-  scroll-behavior: smooth;
-}
-
-body {
-  font-family: 'Inter', system-ui, -apple-system, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  background: var(--color-white);
-  color: var(--color-black);
-  line-height: 1.6;
-}
-
-#root {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-}
-
-main {
-  flex: 1;
-}
-
-a {
-  color: var(--color-primary);
-  text-decoration: none;
-  transition: color 0.2s ease;
-}
-
-a:hover {
-  color: var(--color-primary-dark);
-}
-
-button {
-  cursor: pointer;
-  font-family: inherit;
-  transition: all 0.2s ease;
+/* Eyebrow label (small uppercase mono tag), matches talent.abigtech256.com */
+.eyebrow {
+  display: inline-block;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--kelly);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 12px;
 }
 
 /* Primary Button */
 .btn-primary {
-  background: var(--color-primary);
-  color: var(--color-white);
+  background: var(--kelly);
+  color: #0a0a0a;
   border: none;
   padding: 14px 28px;
   border-radius: var(--radius-md);
-  font-weight: 600;
+  font-weight: 700;
   font-size: 15px;
   display: inline-flex;
   align-items: center;
@@ -92,15 +27,15 @@ button {
 }
 
 .btn-primary:hover {
-  background: var(--color-primary-dark);
+  background: var(--kelly-deep);
   transform: translateY(-1px);
 }
 
 /* Secondary Button */
 .btn-secondary {
   background: transparent;
-  color: var(--color-black);
-  border: 2px solid var(--color-gray-300);
+  color: var(--ink);
+  border: 2px solid var(--line);
   padding: 12px 26px;
   border-radius: var(--radius-md);
   font-weight: 500;
@@ -108,24 +43,26 @@ button {
 }
 
 .btn-secondary:hover {
-  border-color: var(--color-black);
+  border-color: var(--kelly);
+  color: var(--kelly);
 }
 
 /* Card Style */
 .card {
-  background: var(--color-white);
-  border: 1px solid var(--color-gray-200);
+  background: var(--surface);
+  border: 1px solid var(--line);
   border-radius: var(--radius-xl);
   padding: 24px;
   transition: all 0.3s ease;
 }
 
 .card:hover {
-  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.35);
   transform: translateY(-4px);
+  border-color: var(--kelly);
 }
 
-/* Badge */
+/* Badge / Pill */
 .badge {
   display: inline-flex;
   align-items: center;
@@ -136,22 +73,23 @@ button {
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.5px;
+  font-family: 'IBM Plex Mono', monospace;
 }
 
 .badge-primary {
-  background: rgba(249, 115, 22, 0.1);
-  color: var(--color-primary);
+  background: var(--kelly-tint);
+  color: var(--kelly);
 }
 
 .badge-success {
-  background: rgba(34, 197, 94, 0.1);
-  color: var(--color-success);
+  background: var(--kelly-tint);
+  color: var(--kelly);
 }
 
 /* Code */
 code {
-  font-family: 'Roboto Mono', monospace;
-  background: var(--color-gray-100);
+  font-family: 'IBM Plex Mono', monospace;
+  background: var(--surface);
   padding: 2px 8px;
   border-radius: 4px;
   font-size: 13px;
@@ -164,27 +102,27 @@ code {
 }
 
 ::-webkit-scrollbar-track {
-  background: var(--color-gray-100);
+  background: var(--surface);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--color-gray-300);
+  background: var(--line);
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--color-gray-400);
+  background: var(--kelly);
 }
 
 /* Selection */
 ::selection {
-  background: rgba(249, 115, 22, 0.2);
-  color: var(--color-black);
+  background: var(--kelly-tint);
+  color: var(--ink);
 }
 
 /* Focus */
 :focus-visible {
-  outline: 2px solid var(--color-primary);
+  outline: 2px solid var(--kelly);
   outline-offset: 2px;
 }
 

@@ -30,7 +30,7 @@ export default function StarRating({
                         key={i}
                         style={{
                             fontSize: size,
-                            color: filled ? '#f97316' : '#e5e5e5', // Orange for filled, gray for empty
+                            color: filled ? 'var(--kelly)' : 'var(--line)',
                             cursor: interactive ? 'pointer' : 'default',
                             transition: 'color 0.2s ease',
                             lineHeight: 1

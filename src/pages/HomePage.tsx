@@ -2,14 +2,16 @@ import { Link } from 'react-router-dom';
 import { apps, formatFileSize } from '../data/apps';
 import UpcomingApps from '../components/UpcomingApps';
 
+const TALENT_URL = 'https://talent.abigtech256.com';
+
 export default function HomePage() {
     return (
         <>
             {/* Hero Section */}
             <section style={{
-                background: '#fff',
+                background: 'var(--paper)',
                 padding: 'clamp(80px, 15vw, 140px) 24px',
-                color: '#0a0a0a'
+                color: 'var(--ink)'
             }}>
                 <div style={{
                     maxWidth: 1280,
@@ -20,8 +22,8 @@ export default function HomePage() {
                         display: 'inline-flex',
                         alignItems: 'center',
                         gap: 8,
-                        background: 'rgba(249, 115, 22, 0.1)',
-                        border: '1px solid rgba(249, 115, 22, 0.3)',
+                        background: 'var(--kelly-tint)',
+                        border: '1px solid var(--kelly)',
                         borderRadius: 100,
                         padding: '8px 16px',
                         marginBottom: 24
@@ -29,37 +31,31 @@ export default function HomePage() {
                         <span style={{
                             width: 8,
                             height: 8,
-                            background: '#22c55e',
+                            background: 'var(--kelly)',
                             borderRadius: '50%'
                         }} />
-                        <span style={{
-                            fontSize: '13px',
-                            color: '#f97316',
-                            fontWeight: 500,
-                            fontFamily: 'Inter, system-ui, sans-serif'
-                        }}>
+                        <span className="eyebrow" style={{ marginBottom: 0 }}>
                             Software & Mobile App Development
                         </span>
                     </div>
 
                     <h1 style={{
                         fontSize: 'clamp(36px, 7vw, 60px)',
-                        fontWeight: 800,
+                        fontWeight: 700,
                         lineHeight: 1.1,
                         marginBottom: 24,
-                        fontFamily: 'Inter, system-ui, sans-serif',
-                        letterSpacing: '-0.03em',
+                        letterSpacing: '-0.02em',
                         maxWidth: 900,
                         margin: '0 auto 24px',
-                        color: '#0a0a0a'
+                        color: 'var(--ink)'
                     }}>
-                        Building <span style={{ color: '#f97316' }}>Innovative</span> Software Solutions
+                        Building <span style={{ color: 'var(--kelly)' }}>Innovative</span> Software Solutions
                     </h1>
 
                     <p style={{
                         fontSize: 'clamp(16px, 2.5vw, 20px)',
                         lineHeight: 1.7,
-                        color: '#525252',
+                        color: 'var(--ink-soft)',
                         marginBottom: 40,
                         maxWidth: 700,
                         margin: '0 auto 40px'
@@ -74,39 +70,12 @@ export default function HomePage() {
                         flexWrap: 'wrap',
                         justifyContent: 'center'
                     }}>
-                        <Link to="/about" style={{
-                            display: 'inline-flex',
-                            alignItems: 'center',
-                            gap: 10,
-                            background: '#f97316',
-                            color: '#fff',
-                            padding: '16px 32px',
-                            borderRadius: 12,
-                            textDecoration: 'none',
-                            fontWeight: 600,
-                            fontSize: '16px',
-                            fontFamily: 'Inter, system-ui, sans-serif',
-                            boxShadow: '0 8px 24px rgba(249, 115, 22, 0.3)',
-                            transition: 'all 0.2s ease'
-                        }}>
+                        <Link to="/about" className="btn-primary" style={{ textDecoration: 'none' }}>
                             Learn About Us
                             <span style={{ fontSize: '18px' }}>→</span>
                         </Link>
 
-                        <Link to="/apps" style={{
-                            display: 'inline-flex',
-                            alignItems: 'center',
-                            gap: 8,
-                            background: 'transparent',
-                            color: '#0a0a0a',
-                            padding: '16px 32px',
-                            borderRadius: 12,
-                            textDecoration: 'none',
-                            fontWeight: 500,
-                            fontSize: '16px',
-                            fontFamily: 'Inter, system-ui, sans-serif',
-                            border: '2px solid #e5e5e5'
-                        }}>
+                        <Link to="/apps" className="btn-secondary" style={{ textDecoration: 'none' }}>
                             Our Apps
                         </Link>
                     </div>
@@ -115,34 +84,22 @@ export default function HomePage() {
 
             {/* What We Do - Services */}
             <section style={{
-                background: '#fafafa',
+                background: 'var(--surface)',
                 padding: 'clamp(64px, 12vw, 100px) 24px'
             }}>
                 <div style={{ maxWidth: 1280, margin: '0 auto' }}>
                     <div style={{ textAlign: 'center', marginBottom: 56 }}>
-                        <span style={{
-                            display: 'inline-block',
-                            fontSize: '12px',
-                            fontWeight: 600,
-                            color: '#f97316',
-                            textTransform: 'uppercase',
-                            letterSpacing: '1px',
-                            marginBottom: 12,
-                            fontFamily: 'Inter, system-ui, sans-serif'
-                        }}>
-                            Our Services
-                        </span>
+                        <span className="eyebrow">Our Services</span>
                         <h2 style={{
                             fontSize: 'clamp(28px, 5vw, 40px)',
-                            fontWeight: 700,
-                            color: '#0a0a0a',
-                            marginBottom: 12,
-                            fontFamily: 'Inter, system-ui, sans-serif'
+                            fontWeight: 600,
+                            color: 'var(--ink)',
+                            marginBottom: 12
                         }}>
                             What We Do
                         </h2>
                         <p style={{
-                            color: '#525252',
+                            color: 'var(--ink-soft)',
                             fontSize: '16px',
                             maxWidth: 600,
                             margin: '0 auto'
@@ -173,16 +130,11 @@ export default function HomePage() {
                                 desc: 'Expert guidance on technology decisions, architecture design, and digital transformation strategies.'
                             }
                         ].map(service => (
-                            <div key={service.title} style={{
-                                background: '#fff',
-                                borderRadius: 24,
-                                padding: 32,
-                                border: '1px solid #e5e5e5'
-                            }}>
+                            <div key={service.title} className="card">
                                 <div style={{
                                     width: 64,
                                     height: 64,
-                                    background: 'rgba(249, 115, 22, 0.1)',
+                                    background: 'var(--kelly-tint)',
                                     borderRadius: 16,
                                     display: 'flex',
                                     alignItems: 'center',
@@ -195,15 +147,14 @@ export default function HomePage() {
                                 <h3 style={{
                                     fontSize: '20px',
                                     fontWeight: 600,
-                                    color: '#0a0a0a',
-                                    marginBottom: 12,
-                                    fontFamily: 'Inter, system-ui, sans-serif'
+                                    color: 'var(--ink)',
+                                    marginBottom: 12
                                 }}>
                                     {service.title}
                                 </h3>
                                 <p style={{
                                     fontSize: '15px',
-                                    color: '#525252',
+                                    color: 'var(--ink-soft)',
                                     lineHeight: 1.7
                                 }}>
                                     {service.desc}
@@ -214,12 +165,119 @@ export default function HomePage() {
                 </div>
             </section>
 
+            {/* aBigTech Talent Section */}
+            <section style={{
+                background: 'var(--paper)',
+                padding: 'clamp(64px, 12vw, 100px) 24px',
+                borderTop: '1px solid var(--line)',
+                borderBottom: '1px solid var(--line)'
+            }}>
+                <div style={{
+                    maxWidth: 1000,
+                    margin: '0 auto',
+                    display: 'flex',
+                    flexWrap: 'wrap',
+                    gap: 48,
+                    alignItems: 'center',
+                    justifyContent: 'space-between'
+                }}>
+                    <div style={{ flex: '1 1 480px' }}>
+                        <span className="eyebrow">A separate program from aBig Tech</span>
+                        <h2 style={{
+                            fontSize: 'clamp(28px, 5vw, 40px)',
+                            fontWeight: 600,
+                            color: 'var(--ink)',
+                            marginBottom: 16
+                        }}>
+                            aBigTech Talent
+                        </h2>
+                        <p style={{
+                            color: 'var(--ink-soft)',
+                            fontSize: '16px',
+                            lineHeight: 1.7,
+                            marginBottom: 24,
+                            maxWidth: 560
+                        }}>
+                            We connect developers in this community with companies abroad hiring remote talent —
+                            no fee, ever, to the developer. Sign in with GitHub, get vetted, and get placed.
+                        </p>
+                        <ul style={{
+                            listStyle: 'none',
+                            padding: 0,
+                            margin: '0 0 32px',
+                            display: 'flex',
+                            flexDirection: 'column',
+                            gap: 10
+                        }}>
+                            {[
+                                'Zero cost to developers — ever',
+                                'Real, vetted clients — no unpaid trials',
+                                'Stay remote — no relocation required',
+                            ].map(item => (
+                                <li key={item} style={{
+                                    display: 'flex',
+                                    alignItems: 'center',
+                                    gap: 10,
+                                    color: 'var(--ink-soft)',
+                                    fontSize: '15px'
+                                }}>
+                                    <span style={{ color: 'var(--kelly)' }}>✓</span>
+                                    {item}
+                                </li>
+                            ))}
+                        </ul>
+                        <a
+                            href={TALENT_URL}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="btn-primary"
+                            style={{ textDecoration: 'none' }}
+                        >
+                            Explore aBigTech Talent
+                            <span>↗</span>
+                        </a>
+                    </div>
+
+                    <div style={{
+                        flex: '1 1 280px',
+                        maxWidth: 340,
+                        background: 'var(--surface)',
+                        border: '1px solid var(--line)',
+                        borderRadius: 24,
+                        padding: 32
+                    }}>
+                        <div style={{
+                            width: 48,
+                            height: 48,
+                            borderRadius: 12,
+                            background: 'var(--kelly)',
+                            color: '#0a0a0a',
+                            display: 'flex',
+                            alignItems: 'center',
+                            justifyContent: 'center',
+                            fontFamily: 'Fraunces, serif',
+                            fontWeight: 700,
+                            fontSize: '18px',
+                            marginBottom: 16
+                        }}>
+                            aBt
+                        </div>
+                        <div style={{ fontFamily: 'IBM Plex Mono, monospace', fontSize: '13px', color: 'var(--ink-soft)', marginBottom: 8 }}>
+                            talent.abigtech256.com
+                        </div>
+                        <p style={{ color: 'var(--ink-soft)', fontSize: '14px', lineHeight: 1.6 }}>
+                            Remote Developer Placement, Uganda. Apply with GitHub — no application fee, no training charge.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
             {/* Upcoming Apps Slider */}
             <UpcomingApps />
 
             {/* Our Apps Section */}
             <section style={{
-                background: '#fff',
+                background: 'var(--surface)',
                 padding: 'clamp(64px, 12vw, 100px) 24px'
             }}>
                 <div style={{ maxWidth: 1280, margin: '0 auto' }}>
@@ -232,23 +290,11 @@ export default function HomePage() {
                         gap: 16
                     }}>
                         <div>
-                            <span style={{
-                                display: 'inline-block',
-                                fontSize: '12px',
-                                fontWeight: 600,
-                                color: '#f97316',
-                                textTransform: 'uppercase',
-                                letterSpacing: '1px',
-                                marginBottom: 8,
-                                fontFamily: 'Inter, system-ui, sans-serif'
-                            }}>
-                                Our Products
-                            </span>
+                            <span className="eyebrow">Our Products</span>
                             <h2 style={{
                                 fontSize: 'clamp(28px, 5vw, 40px)',
-                                fontWeight: 700,
-                                color: '#0a0a0a',
-                                fontFamily: 'Inter, system-ui, sans-serif'
+                                fontWeight: 600,
+                                color: 'var(--ink)'
                             }}>
                                 Apps We've Built
                             </h2>
@@ -257,11 +303,10 @@ export default function HomePage() {
                             display: 'flex',
                             alignItems: 'center',
                             gap: 6,
-                            color: '#f97316',
+                            color: 'var(--kelly)',
                             textDecoration: 'none',
                             fontWeight: 500,
-                            fontSize: '14px',
-                            fontFamily: 'Inter, system-ui, sans-serif'
+                            fontSize: '14px'
                         }}>
                             View all apps
                             <span>→</span>
@@ -276,16 +321,11 @@ export default function HomePage() {
                         {apps.slice(0, 3).map(app => {
                             const latestVersion = app.versions[0];
                             return (
-                                <Link to={`/apps/${app.slug}`} key={app.slug} style={{
-                                    background: '#fafafa',
-                                    borderRadius: 24,
-                                    padding: 24,
-                                    border: '1px solid #e5e5e5',
+                                <Link to={`/apps/${app.slug}`} key={app.slug} className="card" style={{
                                     textDecoration: 'none',
                                     display: 'flex',
                                     flexDirection: 'column',
-                                    gap: 20,
-                                    transition: 'all 0.3s ease'
+                                    gap: 20
                                 }}>
                                     <div style={{ display: 'flex', gap: 16 }}>
                                         <img
@@ -296,22 +336,21 @@ export default function HomePage() {
                                                 height: 72,
                                                 borderRadius: 18,
                                                 objectFit: 'cover',
-                                                boxShadow: '0 8px 20px rgba(0, 0, 0, 0.1)'
+                                                boxShadow: '0 8px 20px rgba(0, 0, 0, 0.4)'
                                             }}
                                         />
                                         <div style={{ flex: 1 }}>
                                             <h3 style={{
                                                 fontSize: '20px',
                                                 fontWeight: 600,
-                                                color: '#0a0a0a',
-                                                marginBottom: 6,
-                                                fontFamily: 'Inter, system-ui, sans-serif'
+                                                color: 'var(--ink)',
+                                                marginBottom: 6
                                             }}>
                                                 {app.name}
                                             </h3>
                                             <p style={{
                                                 fontSize: '14px',
-                                                color: '#525252',
+                                                color: 'var(--ink-soft)',
                                                 lineHeight: 1.5
                                             }}>
                                                 {app.shortDescription}
@@ -325,23 +364,22 @@ export default function HomePage() {
                                         alignItems: 'center',
                                         marginTop: 'auto',
                                         paddingTop: 16,
-                                        borderTop: '1px solid #e5e5e5'
+                                        borderTop: '1px solid var(--line)'
                                     }}>
                                         <span style={{
                                             fontSize: '13px',
-                                            color: '#737373',
-                                            fontFamily: 'Inter, system-ui, sans-serif'
+                                            color: 'var(--ink-soft)',
+                                            fontFamily: 'IBM Plex Mono, monospace'
                                         }}>
                                             v{latestVersion.versionName} • {formatFileSize(latestVersion.size)}
                                         </span>
                                         <span style={{
-                                            background: '#f97316',
-                                            color: '#fff',
+                                            background: 'var(--kelly)',
+                                            color: '#0a0a0a',
                                             padding: '10px 20px',
                                             borderRadius: 10,
                                             fontSize: '14px',
-                                            fontWeight: 600,
-                                            fontFamily: 'Inter, system-ui, sans-serif'
+                                            fontWeight: 700
                                         }}>
                                             Download
                                         </span>
@@ -355,28 +393,16 @@ export default function HomePage() {
 
             {/* Why Work With Us */}
             <section style={{
-                background: '#fafafa',
+                background: 'var(--paper)',
                 padding: 'clamp(64px, 12vw, 100px) 24px'
             }}>
                 <div style={{ maxWidth: 1000, margin: '0 auto' }}>
                     <div style={{ textAlign: 'center', marginBottom: 56 }}>
-                        <span style={{
-                            display: 'inline-block',
-                            fontSize: '12px',
-                            fontWeight: 600,
-                            color: '#f97316',
-                            textTransform: 'uppercase',
-                            letterSpacing: '1px',
-                            marginBottom: 12,
-                            fontFamily: 'Inter, system-ui, sans-serif'
-                        }}>
-                            Why Choose Us
-                        </span>
+                        <span className="eyebrow">Why Choose Us</span>
                         <h2 style={{
                             fontSize: 'clamp(28px, 5vw, 40px)',
-                            fontWeight: 700,
-                            color: '#0a0a0a',
-                            fontFamily: 'Inter, system-ui, sans-serif'
+                            fontWeight: 600,
+                            color: 'var(--ink)'
                         }}>
                             Built for Success
                         </h2>
@@ -397,8 +423,8 @@ export default function HomePage() {
                                 <div style={{
                                     width: 64,
                                     height: 64,
-                                    background: '#fff',
-                                    border: '1px solid #e5e5e5',
+                                    background: 'var(--surface)',
+                                    border: '1px solid var(--line)',
                                     borderRadius: 16,
                                     display: 'flex',
                                     alignItems: 'center',
@@ -411,16 +437,14 @@ export default function HomePage() {
                                 <h3 style={{
                                     fontSize: '18px',
                                     fontWeight: 600,
-                                    color: '#0a0a0a',
-                                    marginBottom: 8,
-                                    fontFamily: 'Inter, system-ui, sans-serif'
+                                    color: 'var(--ink)',
+                                    marginBottom: 8
                                 }}>
                                     {item.title}
                                 </h3>
                                 <p style={{
                                     fontSize: '14px',
-                                    color: '#525252',
-                                    fontFamily: 'Inter, system-ui, sans-serif'
+                                    color: 'var(--ink-soft)'
                                 }}>
                                     {item.desc}
                                 </p>
@@ -432,22 +456,21 @@ export default function HomePage() {
 
             {/* CTA Section */}
             <section style={{
-                background: 'linear-gradient(135deg, #f97316 0%, #ea580c 100%)',
+                background: 'linear-gradient(135deg, var(--kelly-deep) 0%, var(--kelly) 100%)',
                 padding: 'clamp(64px, 12vw, 100px) 24px',
                 textAlign: 'center'
             }}>
                 <div style={{ maxWidth: 700, margin: '0 auto' }}>
                     <h2 style={{
                         fontSize: 'clamp(28px, 5vw, 40px)',
-                        fontWeight: 700,
-                        color: '#fff',
-                        marginBottom: 16,
-                        fontFamily: 'Inter, system-ui, sans-serif'
+                        fontWeight: 600,
+                        color: '#0a0a0a',
+                        marginBottom: 16
                     }}>
                         Ready to Build Something Great?
                     </h2>
                     <p style={{
-                        color: 'rgba(255,255,255,0.9)',
+                        color: 'rgba(10,10,10,0.75)',
                         fontSize: '16px',
                         marginBottom: 32,
                         lineHeight: 1.7
@@ -458,14 +481,13 @@ export default function HomePage() {
                         display: 'inline-flex',
                         alignItems: 'center',
                         gap: 10,
-                        background: '#fff',
-                        color: '#f97316',
+                        background: '#0a0a0a',
+                        color: 'var(--kelly)',
                         padding: '16px 32px',
                         borderRadius: 12,
                         textDecoration: 'none',
                         fontWeight: 600,
-                        fontSize: '16px',
-                        fontFamily: 'Inter, system-ui, sans-serif'
+                        fontSize: '16px'
                     }}>
                         Get in Touch
                         <span>→</span>

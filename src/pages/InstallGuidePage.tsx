@@ -1,28 +1,28 @@
 export default function InstallGuidePage() {
     return (
-        <main style={{ background: '#fff' }}>
+        <main style={{ background: 'var(--paper)' }}>
             {/* Header */}
             <section style={{
-                background: '#f8fafc',
-                borderBottom: '1px solid #e2e8f0',
+                background: 'var(--surface)',
+                borderBottom: '1px solid var(--line)',
                 padding: 'clamp(48px, 8vw, 80px) 24px'
             }}>
                 <div style={{ maxWidth: 700, margin: '0 auto' }}>
                     <h1 style={{
                         fontSize: 'clamp(28px, 6vw, 40px)',
                         fontWeight: 700,
-                        color: '#0f172a',
+                        color: 'var(--ink)',
                         marginBottom: 16,
-                        fontFamily: 'Inter, system-ui, sans-serif'
+                        fontFamily: 'IBM Plex Sans, sans-serif'
                     }}>
                         How to Install APK Files
                     </h1>
                     <p style={{
-                        color: '#64748b',
+                        color: 'var(--ink-soft)',
                         fontSize: '16px',
                         lineHeight: 1.6
                     }}>
-                        A step-by-step guide to installing Android applications from APK files.
+                        A step-by-step guide to installing the apps we publish directly, like Myuzek.
                     </p>
                 </div>
             </section>
@@ -67,20 +67,20 @@ export default function InstallGuidePage() {
                             gap: 24,
                             marginBottom: index < 4 ? 40 : 0,
                             paddingBottom: index < 4 ? 40 : 0,
-                            borderBottom: index < 4 ? '1px solid #f1f5f9' : 'none'
+                            borderBottom: index < 4 ? '1px solid var(--line)' : 'none'
                         }}>
                             <div style={{
                                 width: 48,
                                 height: 48,
-                                background: '#4f46e5',
-                                color: '#fff',
+                                background: 'var(--kelly)',
+                                color: '#0a0a0a',
                                 borderRadius: '50%',
                                 display: 'flex',
                                 alignItems: 'center',
                                 justifyContent: 'center',
                                 fontWeight: 700,
                                 fontSize: '18px',
-                                fontFamily: 'Inter, system-ui, sans-serif',
+                                fontFamily: 'IBM Plex Sans, sans-serif',
                                 flexShrink: 0
                             }}>
                                 {item.step}
@@ -89,27 +89,27 @@ export default function InstallGuidePage() {
                                 <h2 style={{
                                     fontSize: '20px',
                                     fontWeight: 600,
-                                    color: '#0f172a',
+                                    color: 'var(--ink)',
                                     marginBottom: 12,
-                                    fontFamily: 'Inter, system-ui, sans-serif'
+                                    fontFamily: 'IBM Plex Sans, sans-serif'
                                 }}>
                                     {item.title}
                                 </h2>
                                 <p style={{
                                     fontSize: '15px',
-                                    color: '#475569',
+                                    color: 'var(--ink-soft)',
                                     lineHeight: 1.7,
                                     marginBottom: 12
                                 }}>
                                     {item.description}
                                 </p>
                                 <div style={{
-                                    background: '#f0fdf4',
-                                    border: '1px solid #bbf7d0',
+                                    background: 'var(--kelly-tint)',
+                                    border: '1px solid var(--line)',
                                     borderRadius: 8,
                                     padding: '12px 16px',
                                     fontSize: '13px',
-                                    color: '#166534'
+                                    color: 'var(--kelly)'
                                 }}>
                                     <strong>Tip:</strong> {item.tip}
                                 </div>
@@ -121,16 +121,16 @@ export default function InstallGuidePage() {
 
             {/* Troubleshooting */}
             <section style={{
-                background: '#f8fafc',
+                background: 'var(--surface)',
                 padding: 'clamp(48px, 10vw, 80px) 24px'
             }}>
                 <div style={{ maxWidth: 700, margin: '0 auto' }}>
                     <h2 style={{
                         fontSize: '24px',
                         fontWeight: 700,
-                        color: '#0f172a',
+                        color: 'var(--ink)',
                         marginBottom: 24,
-                        fontFamily: 'Inter, system-ui, sans-serif'
+                        fontFamily: 'IBM Plex Sans, sans-serif'
                     }}>
                         Troubleshooting
                     </h2>
@@ -141,24 +141,24 @@ export default function InstallGuidePage() {
                         { q: 'Can\'t find the APK file', a: 'Check your Downloads folder. You can also search for ".apk" in your file manager.' }
                     ].map((item, i) => (
                         <div key={i} style={{
-                            background: '#fff',
+                            background: 'var(--paper)',
                             borderRadius: 12,
                             padding: 20,
-                            border: '1px solid #e2e8f0',
+                            border: '1px solid var(--line)',
                             marginBottom: i < 2 ? 16 : 0
                         }}>
                             <h4 style={{
                                 fontSize: '15px',
                                 fontWeight: 600,
-                                color: '#0f172a',
+                                color: 'var(--ink)',
                                 marginBottom: 8,
-                                fontFamily: 'Inter, system-ui, sans-serif'
+                                fontFamily: 'IBM Plex Sans, sans-serif'
                             }}>
                                 {item.q}
                             </h4>
                             <p style={{
                                 fontSize: '14px',
-                                color: '#64748b',
+                                color: 'var(--ink-soft)',
                                 margin: 0,
                                 lineHeight: 1.6
                             }}>

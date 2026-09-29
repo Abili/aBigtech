@@ -134,18 +134,18 @@ export default function ReviewsSection({ appSlug }: ReviewsSectionProps) {
 
     return (
         <section style={{
-            background: '#fff',
+            background: 'var(--paper)',
             borderRadius: 20,
             padding: 28,
-            border: '1px solid #e5e5e5',
+            border: '1px solid var(--line)',
             marginTop: 24,
-            fontFamily: 'Inter, system-ui, sans-serif'
+            fontFamily: 'IBM Plex Sans, sans-serif'
         }}>
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 24 }}>
                 <h2 style={{
                     fontSize: '18px',
                     fontWeight: 600,
-                    color: '#0a0a0a'
+                    color: 'var(--ink)'
                 }}>
                     Reviews & Ratings
                 </h2>
@@ -154,8 +154,8 @@ export default function ReviewsSection({ appSlug }: ReviewsSectionProps) {
                         onClick={() => setIsWriting(!isWriting)}
                         style={{
                             padding: '8px 16px',
-                            background: isWriting ? '#f5f5f5' : '#f97316',
-                            color: isWriting ? '#525252' : 'white',
+                            background: isWriting ? 'var(--surface)' : 'var(--kelly)',
+                            color: isWriting ? 'var(--ink-soft)' : '#0a0a0a',
                             border: 'none',
                             borderRadius: 8,
                             fontWeight: 600,
@@ -171,8 +171,8 @@ export default function ReviewsSection({ appSlug }: ReviewsSectionProps) {
                         onClick={handleLogin}
                         style={{
                             padding: '8px 16px',
-                            background: '#0a0a0a',
-                            color: 'white',
+                            background: 'var(--ink)',
+                            color: '#0a0a0a',
                             border: 'none',
                             borderRadius: 8,
                             fontWeight: 600,
@@ -190,7 +190,7 @@ export default function ReviewsSection({ appSlug }: ReviewsSectionProps) {
 
             {/* Write Review Form */}
             {isWriting && user && (
-                <form onSubmit={handleSubmit} style={{ marginBottom: 32, padding: 20, background: '#fafafa', borderRadius: 12 }}>
+                <form onSubmit={handleSubmit} style={{ marginBottom: 32, padding: 20, background: 'var(--surface)', borderRadius: 12 }}>
                     <div style={{ marginBottom: 16 }}>
                         <label style={{ display: 'block', fontSize: '14px', marginBottom: 8, fontWeight: 500 }}>Your Rating</label>
                         <StarRating rating={newRating} interactive onChange={setNewRating} size={32} />
@@ -200,7 +200,7 @@ export default function ReviewsSection({ appSlug }: ReviewsSectionProps) {
                         {user.photoURL && (
                             <img src={user.photoURL} alt="User" style={{ width: 32, height: 32, borderRadius: '50%' }} />
                         )}
-                        <span style={{ fontSize: '14px', fontWeight: 500, color: '#0a0a0a' }}>
+                        <span style={{ fontSize: '14px', fontWeight: 500, color: 'var(--ink)' }}>
                             Posting publicly as {user.displayName}
                         </span>
                     </div>
@@ -217,7 +217,7 @@ export default function ReviewsSection({ appSlug }: ReviewsSectionProps) {
                                 width: '100%',
                                 padding: '10px 12px',
                                 borderRadius: 8,
-                                border: '1px solid #e5e5e5',
+                                border: '1px solid var(--line)',
                                 fontSize: '14px',
                                 resize: 'vertical',
                                 fontFamily: 'inherit'
@@ -231,8 +231,8 @@ export default function ReviewsSection({ appSlug }: ReviewsSectionProps) {
                         style={{
                             width: '100%',
                             padding: '12px',
-                            background: '#0a0a0a',
-                            color: 'white',
+                            background: 'var(--ink)',
+                            color: '#0a0a0a',
                             border: 'none',
                             borderRadius: 8,
                             fontWeight: 600,
@@ -248,7 +248,7 @@ export default function ReviewsSection({ appSlug }: ReviewsSectionProps) {
             {/* Reviews List */}
             <div style={{ display: 'flex', flexDirection: 'column', gap: 24 }}>
                 {reviews.length === 0 ? (
-                    <div style={{ textAlign: 'center', color: '#737373', padding: 20 }}>
+                    <div style={{ textAlign: 'center', color: 'var(--ink-soft)', padding: 20 }}>
                         No reviews yet. Be the first to review!
                     </div>
                 ) : (
@@ -271,7 +271,7 @@ export default function ReviewsSection({ appSlug }: ReviewsSectionProps) {
                                     justifyContent: 'center',
                                     fontSize: '18px',
                                     fontWeight: 600,
-                                    color: '#171717',
+                                    color: 'var(--ink)',
                                     flexShrink: 0
                                 }}>
                                     {review.userName.charAt(0).toUpperCase()}
@@ -280,14 +280,14 @@ export default function ReviewsSection({ appSlug }: ReviewsSectionProps) {
                             <div style={{ flex: 1 }}>
                                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 4 }}>
                                     <span style={{ fontWeight: 600, fontSize: '15px' }}>{review.userName}</span>
-                                    <span style={{ fontSize: '12px', color: '#737373' }}>
+                                    <span style={{ fontSize: '12px', color: 'var(--ink-soft)' }}>
                                         {review.createdAt?.toDate().toLocaleDateString() || 'Just now'}
                                     </span>
                                 </div>
                                 <div style={{ marginBottom: 6 }}>
                                     <StarRating rating={review.rating} size={14} />
                                 </div>
-                                <p style={{ margin: 0, fontSize: '14px', color: '#525252', lineHeight: 1.5 }}>
+                                <p style={{ margin: 0, fontSize: '14px', color: 'var(--ink-soft)', lineHeight: 1.5 }}>
                                     {review.comment}
                                 </p>
                             </div>

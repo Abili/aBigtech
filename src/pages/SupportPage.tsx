@@ -2,11 +2,11 @@ import { Link } from 'react-router-dom';
 
 export default function SupportPage() {
     return (
-        <main style={{ background: '#f8fafc', minHeight: '100vh' }}>
+        <main style={{ background: 'var(--surface)', minHeight: '100vh' }}>
             {/* Header */}
             <section style={{
-                background: '#fff',
-                borderBottom: '1px solid #e2e8f0',
+                background: 'var(--paper)',
+                borderBottom: '1px solid var(--line)',
                 padding: 'clamp(48px, 8vw, 80px) 24px',
                 textAlign: 'center'
             }}>
@@ -14,18 +14,18 @@ export default function SupportPage() {
                     <h1 style={{
                         fontSize: 'clamp(32px, 7vw, 48px)',
                         fontWeight: 700,
-                        color: '#0f172a',
+                        color: 'var(--ink)',
                         marginBottom: 16,
-                        fontFamily: 'Inter, system-ui, sans-serif'
+                        fontFamily: 'IBM Plex Sans, sans-serif'
                     }}>
                         Support Center
                     </h1>
                     <p style={{
-                        color: '#64748b',
+                        color: 'var(--ink-soft)',
                         fontSize: '16px',
                         lineHeight: 1.6
                     }}>
-                        Find answers to common questions or get in touch with our team.
+                        Find answers to common questions, get help installing our apps, or get in touch about a project.
                     </p>
                 </div>
             </section>
@@ -40,10 +40,10 @@ export default function SupportPage() {
                     gap: 24
                 }}>
                     <Link to="/support/faq" style={{
-                        background: '#fff',
+                        background: 'var(--paper)',
                         borderRadius: 16,
                         padding: 32,
-                        border: '1px solid #e2e8f0',
+                        border: '1px solid var(--line)',
                         textDecoration: 'none',
                         display: 'flex',
                         flexDirection: 'column',
@@ -54,7 +54,7 @@ export default function SupportPage() {
                         <div style={{
                             width: 64,
                             height: 64,
-                            background: '#e0e7ff',
+                            background: 'var(--kelly-tint)',
                             borderRadius: 16,
                             display: 'flex',
                             alignItems: 'center',
@@ -67,15 +67,15 @@ export default function SupportPage() {
                         <h3 style={{
                             fontSize: '18px',
                             fontWeight: 600,
-                            color: '#0f172a',
+                            color: 'var(--ink)',
                             marginBottom: 8,
-                            fontFamily: 'Inter, system-ui, sans-serif'
+                            fontFamily: 'IBM Plex Sans, sans-serif'
                         }}>
                             FAQ
                         </h3>
                         <p style={{
                             fontSize: '14px',
-                            color: '#64748b',
+                            color: 'var(--ink-soft)',
                             margin: 0
                         }}>
                             Common questions answered
@@ -83,10 +83,10 @@ export default function SupportPage() {
                     </Link>
 
                     <Link to="/support/installation-guide" style={{
-                        background: '#fff',
+                        background: 'var(--paper)',
                         borderRadius: 16,
                         padding: 32,
-                        border: '1px solid #e2e8f0',
+                        border: '1px solid var(--line)',
                         textDecoration: 'none',
                         display: 'flex',
                         flexDirection: 'column',
@@ -97,7 +97,7 @@ export default function SupportPage() {
                         <div style={{
                             width: 64,
                             height: 64,
-                            background: '#dcfce7',
+                            background: 'var(--kelly-tint)',
                             borderRadius: 16,
                             display: 'flex',
                             alignItems: 'center',
@@ -110,15 +110,15 @@ export default function SupportPage() {
                         <h3 style={{
                             fontSize: '18px',
                             fontWeight: 600,
-                            color: '#0f172a',
+                            color: 'var(--ink)',
                             marginBottom: 8,
-                            fontFamily: 'Inter, system-ui, sans-serif'
+                            fontFamily: 'IBM Plex Sans, sans-serif'
                         }}>
                             Installation Guide
                         </h3>
                         <p style={{
                             fontSize: '14px',
-                            color: '#64748b',
+                            color: 'var(--ink-soft)',
                             margin: 0
                         }}>
                             How to install APK files
@@ -126,10 +126,10 @@ export default function SupportPage() {
                     </Link>
 
                     <Link to="/support/contact" style={{
-                        background: '#fff',
+                        background: 'var(--paper)',
                         borderRadius: 16,
                         padding: 32,
-                        border: '1px solid #e2e8f0',
+                        border: '1px solid var(--line)',
                         textDecoration: 'none',
                         display: 'flex',
                         flexDirection: 'column',
@@ -140,7 +140,7 @@ export default function SupportPage() {
                         <div style={{
                             width: 64,
                             height: 64,
-                            background: '#fef3c7',
+                            background: 'var(--kelly-tint)',
                             borderRadius: 16,
                             display: 'flex',
                             alignItems: 'center',
@@ -153,15 +153,15 @@ export default function SupportPage() {
                         <h3 style={{
                             fontSize: '18px',
                             fontWeight: 600,
-                            color: '#0f172a',
+                            color: 'var(--ink)',
                             marginBottom: 8,
-                            fontFamily: 'Inter, system-ui, sans-serif'
+                            fontFamily: 'IBM Plex Sans, sans-serif'
                         }}>
                             Contact Us
                         </h3>
                         <p style={{
                             fontSize: '14px',
-                            color: '#64748b',
+                            color: 'var(--ink-soft)',
                             margin: 0
                         }}>
                             Get in touch with our team
@@ -175,17 +175,17 @@ export default function SupportPage() {
                 <div style={{
                     maxWidth: 700,
                     margin: '0 auto',
-                    background: '#fff',
+                    background: 'var(--paper)',
                     borderRadius: 16,
                     padding: 32,
-                    border: '1px solid #e2e8f0'
+                    border: '1px solid var(--line)'
                 }}>
                     <h2 style={{
                         fontSize: '20px',
                         fontWeight: 600,
-                        color: '#0f172a',
+                        color: 'var(--ink)',
                         marginBottom: 24,
-                        fontFamily: 'Inter, system-ui, sans-serif'
+                        fontFamily: 'IBM Plex Sans, sans-serif'
                     }}>
                         Quick Answers
                     </h2>
@@ -197,20 +197,20 @@ export default function SupportPage() {
                     ].map((item, i) => (
                         <div key={i} style={{
                             padding: '16px 0',
-                            borderTop: i > 0 ? '1px solid #f1f5f9' : 'none'
+                            borderTop: i > 0 ? '1px solid var(--line)' : 'none'
                         }}>
                             <h4 style={{
                                 fontSize: '15px',
                                 fontWeight: 600,
-                                color: '#0f172a',
+                                color: 'var(--ink)',
                                 marginBottom: 8,
-                                fontFamily: 'Inter, system-ui, sans-serif'
+                                fontFamily: 'IBM Plex Sans, sans-serif'
                             }}>
                                 {item.q}
                             </h4>
                             <p style={{
                                 fontSize: '14px',
-                                color: '#64748b',
+                                color: 'var(--ink-soft)',
                                 margin: 0,
                                 lineHeight: 1.6
                             }}>
@@ -222,7 +222,7 @@ export default function SupportPage() {
                     <Link to="/support/faq" style={{
                         display: 'inline-block',
                         marginTop: 16,
-                        color: '#f97316',
+                        color: 'var(--kelly)',
                         fontSize: '14px',
                         fontWeight: 500,
                         textDecoration: 'none'

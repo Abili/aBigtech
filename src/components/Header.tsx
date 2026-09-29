@@ -48,6 +48,8 @@ export default function Header({ currentPath }: HeaderProps) {
         { path: '/support', label: 'Support' },
     ];
 
+    const TALENT_URL = 'https://talent.abigtech256.com';
+
     const isActive = (path: string) => currentPath.startsWith(path);
 
     // Close mobile menu on route change
@@ -83,8 +85,8 @@ export default function Header({ currentPath }: HeaderProps) {
     return (
         <>
             <header style={{
-                background: '#fff',
-                borderBottom: '1px solid #e5e5e5',
+                background: 'var(--paper)',
+                borderBottom: '1px solid var(--line)',
                 position: 'sticky',
                 top: 0,
                 zIndex: 100
@@ -109,8 +111,8 @@ export default function Header({ currentPath }: HeaderProps) {
                         <span style={{
                             fontSize: '18px',
                             fontWeight: 700,
-                            color: '#0a0a0a',
-                            fontFamily: 'Inter, system-ui, sans-serif'
+                            color: 'var(--ink)',
+                            fontFamily: 'IBM Plex Sans, sans-serif'
                         }}>
                             aBig Tech
                         </span>
@@ -131,16 +133,39 @@ export default function Header({ currentPath }: HeaderProps) {
                                     borderRadius: 8,
                                     fontSize: '14px',
                                     fontWeight: 500,
-                                    color: isActive(item.path) ? '#f97316' : '#525252',
-                                    background: isActive(item.path) ? 'rgba(249, 115, 22, 0.1)' : 'transparent',
+                                    color: isActive(item.path) ? 'var(--kelly)' : 'var(--ink-soft)',
+                                    background: isActive(item.path) ? 'var(--kelly-tint)' : 'transparent',
                                     textDecoration: 'none',
                                     transition: 'all 0.2s ease',
-                                    fontFamily: 'Inter, system-ui, sans-serif'
+                                    fontFamily: 'IBM Plex Sans, sans-serif'
                                 }}
                             >
                                 {item.label}
                             </Link>
                         ))}
+                        <a
+                            href={TALENT_URL}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            style={{
+                                display: 'flex',
+                                alignItems: 'center',
+                                gap: 6,
+                                padding: '8px 16px',
+                                borderRadius: 8,
+                                fontSize: '14px',
+                                fontWeight: 600,
+                                color: 'var(--kelly)',
+                                border: '1px solid var(--kelly)',
+                                textDecoration: 'none',
+                                transition: 'all 0.2s ease',
+                                fontFamily: 'IBM Plex Sans, sans-serif',
+                                marginLeft: 4
+                            }}
+                        >
+                            Talent
+                            <span style={{ fontSize: '12px' }}>↗</span>
+                        </a>
                     </nav>
 
                     {/* Right side: Search + Auth + Mobile Menu */}
@@ -152,29 +177,29 @@ export default function Header({ currentPath }: HeaderProps) {
                                 display: 'flex',
                                 alignItems: 'center',
                                 gap: 8,
-                                background: '#fafafa',
+                                background: 'var(--surface)',
                                 padding: '8px 12px',
                                 borderRadius: 8,
-                                border: '1px solid #e5e5e5',
+                                border: '1px solid var(--line)',
                                 cursor: 'pointer',
                                 transition: 'all 0.2s ease'
                             }}
                         >
-                            <span style={{ color: '#737373', fontSize: '14px' }}>🔍</span>
+                            <span style={{ color: 'var(--ink-soft)', fontSize: '14px' }}>🔍</span>
                             <span className="hide-mobile" style={{
-                                color: '#737373',
+                                color: 'var(--ink-soft)',
                                 fontSize: '13px',
-                                fontFamily: 'Inter, system-ui, sans-serif'
+                                fontFamily: 'IBM Plex Sans, sans-serif'
                             }}>
                                 Search...
                             </span>
                             <span className="hide-mobile" style={{
-                                background: '#e5e5e5',
-                                color: '#525252',
+                                background: 'var(--line)',
+                                color: 'var(--ink-soft)',
                                 padding: '2px 6px',
                                 borderRadius: 4,
                                 fontSize: '11px',
-                                fontFamily: 'Roboto Mono, monospace'
+                                fontFamily: 'IBM Plex Mono, monospace'
                             }}>
                                 /
                             </span>
@@ -199,10 +224,10 @@ export default function Header({ currentPath }: HeaderProps) {
                                         <img
                                             src={user.photoURL}
                                             alt={user.displayName || 'User'}
-                                            style={{ width: 32, height: 32, borderRadius: '50%', objectFit: 'cover', border: '1px solid #e5e5e5' }}
+                                            style={{ width: 32, height: 32, borderRadius: '50%', objectFit: 'cover', border: '1px solid var(--line)' }}
                                         />
                                     ) : (
-                                        <div style={{ width: 32, height: 32, borderRadius: '50%', background: '#f97316', color: 'white', display: 'flex', alignItems: 'center', justifyContent: 'center', fontWeight: 600, fontSize: '14px' }}>
+                                        <div style={{ width: 32, height: 32, borderRadius: '50%', background: 'var(--kelly)', color: '#0a0a0a', display: 'flex', alignItems: 'center', justifyContent: 'center', fontWeight: 600, fontSize: '14px' }}>
                                             {user.displayName?.charAt(0) || 'U'}
                                         </div>
                                     )}
@@ -213,15 +238,15 @@ export default function Header({ currentPath }: HeaderProps) {
                                         position: 'absolute',
                                         top: '120%',
                                         right: 0,
-                                        background: 'white',
-                                        border: '1px solid #e5e5e5',
+                                        background: 'var(--paper)',
+                                        border: '1px solid var(--line)',
                                         borderRadius: 8,
-                                        boxShadow: '0 4px 12px rgba(0,0,0,0.1)',
+                                        boxShadow: '0 4px 12px rgba(0,0,0,0.35)',
                                         padding: 8,
                                         minWidth: 160,
                                         zIndex: 1000
                                     }}>
-                                        <div style={{ padding: '8px 12px', fontSize: '13px', fontWeight: 500, color: '#0a0a0a', borderBottom: '1px solid #f5f5f5', marginBottom: 4 }}>
+                                        <div style={{ padding: '8px 12px', fontSize: '13px', fontWeight: 500, color: 'var(--ink)', borderBottom: '1px solid var(--line)', marginBottom: 4 }}>
                                             {user.displayName}
                                         </div>
 
@@ -237,11 +262,11 @@ export default function Header({ currentPath }: HeaderProps) {
                                                     background: 'transparent',
                                                     textDecoration: 'none',
                                                     fontSize: '13px',
-                                                    color: '#0a0a0a',
+                                                    color: 'var(--ink)',
                                                     cursor: 'pointer',
                                                     borderRadius: 4
                                                 }}
-                                                onMouseOver={(e) => e.currentTarget.style.background = '#f5f5f5'}
+                                                onMouseOver={(e) => e.currentTarget.style.background = 'var(--surface)'}
                                                 onMouseOut={(e) => e.currentTarget.style.background = 'transparent'}
                                             >
                                                 Admin Dashboard
@@ -257,11 +282,11 @@ export default function Header({ currentPath }: HeaderProps) {
                                                 background: 'transparent',
                                                 border: 'none',
                                                 fontSize: '13px',
-                                                color: '#ef4444',
+                                                color: 'var(--amber)',
                                                 cursor: 'pointer',
                                                 borderRadius: 4
                                             }}
-                                            onMouseOver={(e) => e.currentTarget.style.background = '#fef2f2'}
+                                            onMouseOver={(e) => e.currentTarget.style.background = 'var(--surface)'}
                                             onMouseOut={(e) => e.currentTarget.style.background = 'transparent'}
                                         >
                                             Sign Out
@@ -274,15 +299,15 @@ export default function Header({ currentPath }: HeaderProps) {
                                 type="button"
                                 onClick={handleLogin}
                                 style={{
-                                    background: '#0a0a0a',
-                                    color: 'white',
+                                    background: 'var(--kelly)',
+                                    color: '#0a0a0a',
                                     border: 'none',
                                     padding: '8px 16px',
                                     borderRadius: 8,
                                     fontSize: '13px',
-                                    fontWeight: 600,
+                                    fontWeight: 700,
                                     cursor: 'pointer',
-                                    fontFamily: 'Inter, system-ui, sans-serif'
+                                    fontFamily: 'IBM Plex Sans, sans-serif'
                                 }}
                             >
                                 Sign In
@@ -303,7 +328,7 @@ export default function Header({ currentPath }: HeaderProps) {
                                 border: 'none',
                                 cursor: 'pointer',
                                 fontSize: '20px',
-                                color: '#0a0a0a', // Explicit color fix
+                                color: 'var(--ink)',
                                 zIndex: 102 // Ensure above other elements
                             }}
                             aria-label="Toggle menu"
@@ -323,7 +348,7 @@ export default function Header({ currentPath }: HeaderProps) {
                             left: 0,
                             right: 0,
                             bottom: 0,
-                            background: '#fff',
+                            background: 'var(--paper)',
                             zIndex: 99,
                             padding: 24,
                             overflowY: 'auto'
@@ -343,15 +368,36 @@ export default function Header({ currentPath }: HeaderProps) {
                                         borderRadius: 12,
                                         fontSize: '18px',
                                         fontWeight: 500,
-                                        color: isActive(item.path) ? '#f97316' : '#0a0a0a',
-                                        background: isActive(item.path) ? 'rgba(249, 115, 22, 0.1)' : '#f5f5f5',
+                                        color: isActive(item.path) ? 'var(--kelly)' : 'var(--ink)',
+                                        background: isActive(item.path) ? 'var(--kelly-tint)' : 'var(--surface)',
                                         textDecoration: 'none',
-                                        fontFamily: 'Inter, system-ui, sans-serif'
+                                        fontFamily: 'IBM Plex Sans, sans-serif'
                                     }}
                                 >
                                     {item.label}
                                 </Link>
                             ))}
+                            <a
+                                href={TALENT_URL}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                style={{
+                                    padding: '16px 20px',
+                                    borderRadius: 12,
+                                    fontSize: '18px',
+                                    fontWeight: 600,
+                                    color: 'var(--kelly)',
+                                    background: 'var(--kelly-tint)',
+                                    textDecoration: 'none',
+                                    fontFamily: 'IBM Plex Sans, sans-serif',
+                                    display: 'flex',
+                                    alignItems: 'center',
+                                    justifyContent: 'space-between'
+                                }}
+                            >
+                                aBigTech Talent
+                                <span>↗</span>
+                            </a>
                         </nav>
                     </div>
                 )}

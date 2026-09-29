@@ -33,11 +33,11 @@ export default function ContactPage() {
     };
 
     return (
-        <main style={{ background: '#f8fafc', minHeight: '100vh' }}>
+        <main style={{ background: 'var(--surface)', minHeight: '100vh' }}>
             {/* Header */}
             <section style={{
-                background: '#fff',
-                borderBottom: '1px solid #e5e5e5',
+                background: 'var(--paper)',
+                borderBottom: '1px solid var(--line)',
                 padding: 'clamp(48px, 8vw, 80px) 24px',
                 textAlign: 'center'
             }}>
@@ -46,26 +46,26 @@ export default function ContactPage() {
                         display: 'inline-flex',
                         alignItems: 'center',
                         gap: 6,
-                        color: '#f97316',
+                        color: 'var(--kelly)',
                         textDecoration: 'none',
                         fontSize: '14px',
                         fontWeight: 500,
                         marginBottom: 16,
-                        fontFamily: 'Inter, system-ui, sans-serif'
+                        fontFamily: 'IBM Plex Sans, sans-serif'
                     }}>
                         ← Back to Support
                     </Link>
                     <h1 style={{
                         fontSize: 'clamp(32px, 7vw, 48px)',
                         fontWeight: 700,
-                        color: '#0a0a0a',
+                        color: 'var(--ink)',
                         marginBottom: 16,
-                        fontFamily: 'Inter, system-ui, sans-serif'
+                        fontFamily: 'IBM Plex Sans, sans-serif'
                     }}>
                         Contact Us
                     </h1>
                     <p style={{
-                        color: '#525252',
+                        color: 'var(--ink-soft)',
                         fontSize: '16px',
                         lineHeight: 1.6
                     }}>
@@ -85,10 +85,10 @@ export default function ContactPage() {
                 }}>
                     {/* Contact Form */}
                     <div style={{
-                        background: '#fff',
+                        background: 'var(--paper)',
                         borderRadius: 16,
                         padding: 32,
-                        border: '1px solid #e5e5e5'
+                        border: '1px solid var(--line)'
                     }}>
                         {submitted ? (
                             <div style={{ textAlign: 'center', padding: '40px 20px' }}>
@@ -96,14 +96,14 @@ export default function ContactPage() {
                                 <h2 style={{
                                     fontSize: '24px',
                                     fontWeight: 600,
-                                    color: '#0a0a0a',
+                                    color: 'var(--ink)',
                                     marginBottom: 12,
-                                    fontFamily: 'Inter, system-ui, sans-serif'
+                                    fontFamily: 'IBM Plex Sans, sans-serif'
                                 }}>
                                     Message Sent!
                                 </h2>
                                 <p style={{
-                                    color: '#525252',
+                                    color: 'var(--ink-soft)',
                                     fontSize: '15px',
                                     marginBottom: 24
                                 }}>
@@ -115,15 +115,15 @@ export default function ContactPage() {
                                         setFormData({ name: '', email: '', subject: '', message: '' });
                                     }}
                                     style={{
-                                        background: '#f97316',
-                                        color: '#fff',
+                                        background: 'var(--kelly)',
+                                        color: '#0a0a0a',
                                         border: 'none',
                                         padding: '12px 24px',
                                         borderRadius: 8,
                                         cursor: 'pointer',
                                         fontWeight: 600,
                                         fontSize: '14px',
-                                        fontFamily: 'Inter, system-ui, sans-serif'
+                                        fontFamily: 'IBM Plex Sans, sans-serif'
                                     }}
                                 >
                                     Send Another Message
@@ -134,9 +134,9 @@ export default function ContactPage() {
                                 <h2 style={{
                                     fontSize: '20px',
                                     fontWeight: 600,
-                                    color: '#0a0a0a',
+                                    color: 'var(--ink)',
                                     marginBottom: 24,
-                                    fontFamily: 'Inter, system-ui, sans-serif'
+                                    fontFamily: 'IBM Plex Sans, sans-serif'
                                 }}>
                                     Send us a message
                                 </h2>
@@ -146,9 +146,9 @@ export default function ContactPage() {
                                         display: 'block',
                                         fontSize: '14px',
                                         fontWeight: 500,
-                                        color: '#0a0a0a',
+                                        color: 'var(--ink)',
                                         marginBottom: 8,
-                                        fontFamily: 'Inter, system-ui, sans-serif'
+                                        fontFamily: 'IBM Plex Sans, sans-serif'
                                     }}>
                                         Your Name
                                     </label>
@@ -162,9 +162,9 @@ export default function ContactPage() {
                                             width: '100%',
                                             padding: '12px 14px',
                                             borderRadius: 8,
-                                            border: '1px solid #e5e5e5',
+                                            border: '1px solid var(--line)',
                                             fontSize: '15px',
-                                            fontFamily: 'Inter, system-ui, sans-serif',
+                                            fontFamily: 'IBM Plex Sans, sans-serif',
                                             outline: 'none',
                                             boxSizing: 'border-box'
                                         }}
@@ -177,9 +177,9 @@ export default function ContactPage() {
                                         display: 'block',
                                         fontSize: '14px',
                                         fontWeight: 500,
-                                        color: '#0a0a0a',
+                                        color: 'var(--ink)',
                                         marginBottom: 8,
-                                        fontFamily: 'Inter, system-ui, sans-serif'
+                                        fontFamily: 'IBM Plex Sans, sans-serif'
                                     }}>
                                         Email Address
                                     </label>
@@ -193,9 +193,9 @@ export default function ContactPage() {
                                             width: '100%',
                                             padding: '12px 14px',
                                             borderRadius: 8,
-                                            border: '1px solid #e5e5e5',
+                                            border: '1px solid var(--line)',
                                             fontSize: '15px',
-                                            fontFamily: 'Inter, system-ui, sans-serif',
+                                            fontFamily: 'IBM Plex Sans, sans-serif',
                                             outline: 'none',
                                             boxSizing: 'border-box'
                                         }}
@@ -208,9 +208,9 @@ export default function ContactPage() {
                                         display: 'block',
                                         fontSize: '14px',
                                         fontWeight: 500,
-                                        color: '#0a0a0a',
+                                        color: 'var(--ink)',
                                         marginBottom: 8,
-                                        fontFamily: 'Inter, system-ui, sans-serif'
+                                        fontFamily: 'IBM Plex Sans, sans-serif'
                                     }}>
                                         Subject
                                     </label>
@@ -223,11 +223,11 @@ export default function ContactPage() {
                                             width: '100%',
                                             padding: '12px 14px',
                                             borderRadius: 8,
-                                            border: '1px solid #e5e5e5',
+                                            border: '1px solid var(--line)',
                                             fontSize: '15px',
-                                            fontFamily: 'Inter, system-ui, sans-serif',
+                                            fontFamily: 'IBM Plex Sans, sans-serif',
                                             outline: 'none',
-                                            background: '#fff',
+                                            background: 'var(--paper)',
                                             cursor: 'pointer',
                                             boxSizing: 'border-box'
                                         }}
@@ -247,9 +247,9 @@ export default function ContactPage() {
                                         display: 'block',
                                         fontSize: '14px',
                                         fontWeight: 500,
-                                        color: '#0a0a0a',
+                                        color: 'var(--ink)',
                                         marginBottom: 8,
-                                        fontFamily: 'Inter, system-ui, sans-serif'
+                                        fontFamily: 'IBM Plex Sans, sans-serif'
                                     }}>
                                         Message
                                     </label>
@@ -263,9 +263,9 @@ export default function ContactPage() {
                                             width: '100%',
                                             padding: '12px 14px',
                                             borderRadius: 8,
-                                            border: '1px solid #e5e5e5',
+                                            border: '1px solid var(--line)',
                                             fontSize: '15px',
-                                            fontFamily: 'Inter, system-ui, sans-serif',
+                                            fontFamily: 'IBM Plex Sans, sans-serif',
                                             outline: 'none',
                                             resize: 'vertical',
                                             boxSizing: 'border-box'
@@ -278,15 +278,15 @@ export default function ContactPage() {
                                     type="submit"
                                     style={{
                                         width: '100%',
-                                        background: '#f97316',
-                                        color: '#fff',
+                                        background: 'var(--kelly)',
+                                        color: '#0a0a0a',
                                         border: 'none',
                                         padding: '14px 24px',
                                         borderRadius: 10,
                                         cursor: 'pointer',
                                         fontWeight: 600,
                                         fontSize: '15px',
-                                        fontFamily: 'Inter, system-ui, sans-serif',
+                                        fontFamily: 'IBM Plex Sans, sans-serif',
                                         transition: 'background 0.2s ease'
                                     }}
                                 >
@@ -299,17 +299,17 @@ export default function ContactPage() {
                     {/* Contact Info */}
                     <div style={{ display: 'flex', flexDirection: 'column', gap: 24 }}>
                         <div style={{
-                            background: '#fff',
+                            background: 'var(--paper)',
                             borderRadius: 16,
                             padding: 24,
-                            border: '1px solid #e5e5e5'
+                            border: '1px solid var(--line)'
                         }}>
                             <h3 style={{
                                 fontSize: '16px',
                                 fontWeight: 600,
-                                color: '#0a0a0a',
+                                color: 'var(--ink)',
                                 marginBottom: 16,
-                                fontFamily: 'Inter, system-ui, sans-serif'
+                                fontFamily: 'IBM Plex Sans, sans-serif'
                             }}>
                                 Other Ways to Reach Us
                             </h3>
@@ -320,12 +320,12 @@ export default function ContactPage() {
                                     alignItems: 'center',
                                     gap: 12,
                                     textDecoration: 'none',
-                                    color: '#0a0a0a'
+                                    color: 'var(--ink)'
                                 }}>
                                     <div style={{
                                         width: 44,
                                         height: 44,
-                                        background: 'rgba(249, 115, 22, 0.1)',
+                                        background: 'var(--kelly-tint)',
                                         borderRadius: 10,
                                         display: 'flex',
                                         alignItems: 'center',
@@ -338,14 +338,14 @@ export default function ContactPage() {
                                         <div style={{
                                             fontSize: '14px',
                                             fontWeight: 500,
-                                            fontFamily: 'Inter, system-ui, sans-serif'
+                                            fontFamily: 'IBM Plex Sans, sans-serif'
                                         }}>
                                             Email
                                         </div>
                                         <div style={{
                                             fontSize: '13px',
-                                            color: '#f97316',
-                                            fontFamily: 'Inter, system-ui, sans-serif'
+                                            color: 'var(--kelly)',
+                                            fontFamily: 'IBM Plex Sans, sans-serif'
                                         }}>
                                             support@abigtech256.com
                                         </div>
@@ -360,7 +360,7 @@ export default function ContactPage() {
                                     <div style={{
                                         width: 44,
                                         height: 44,
-                                        background: 'rgba(249, 115, 22, 0.1)',
+                                        background: 'var(--kelly-tint)',
                                         borderRadius: 10,
                                         display: 'flex',
                                         alignItems: 'center',
@@ -373,15 +373,15 @@ export default function ContactPage() {
                                         <div style={{
                                             fontSize: '14px',
                                             fontWeight: 500,
-                                            color: '#0a0a0a',
-                                            fontFamily: 'Inter, system-ui, sans-serif'
+                                            color: 'var(--ink)',
+                                            fontFamily: 'IBM Plex Sans, sans-serif'
                                         }}>
                                             Response Time
                                         </div>
                                         <div style={{
                                             fontSize: '13px',
-                                            color: '#525252',
-                                            fontFamily: 'Inter, system-ui, sans-serif'
+                                            color: 'var(--ink-soft)',
+                                            fontFamily: 'IBM Plex Sans, sans-serif'
                                         }}>
                                             Usually within 24-48 hours
                                         </div>
@@ -391,17 +391,17 @@ export default function ContactPage() {
                         </div>
 
                         <div style={{
-                            background: '#fff',
+                            background: 'var(--paper)',
                             borderRadius: 16,
                             padding: 24,
-                            border: '1px solid #e5e5e5'
+                            border: '1px solid var(--line)'
                         }}>
                             <h3 style={{
                                 fontSize: '16px',
                                 fontWeight: 600,
-                                color: '#0a0a0a',
+                                color: 'var(--ink)',
                                 marginBottom: 16,
-                                fontFamily: 'Inter, system-ui, sans-serif'
+                                fontFamily: 'IBM Plex Sans, sans-serif'
                             }}>
                                 Quick Resources
                             </h3>
@@ -411,13 +411,13 @@ export default function ContactPage() {
                                     display: 'flex',
                                     alignItems: 'center',
                                     gap: 8,
-                                    color: '#525252',
+                                    color: 'var(--ink-soft)',
                                     textDecoration: 'none',
                                     fontSize: '14px',
-                                    fontFamily: 'Inter, system-ui, sans-serif',
+                                    fontFamily: 'IBM Plex Sans, sans-serif',
                                     padding: '10px 12px',
                                     borderRadius: 8,
-                                    background: '#f8fafc'
+                                    background: 'var(--surface)'
                                 }}>
                                     <span>❓</span>
                                     Frequently Asked Questions
@@ -426,13 +426,13 @@ export default function ContactPage() {
                                     display: 'flex',
                                     alignItems: 'center',
                                     gap: 8,
-                                    color: '#525252',
+                                    color: 'var(--ink-soft)',
                                     textDecoration: 'none',
                                     fontSize: '14px',
-                                    fontFamily: 'Inter, system-ui, sans-serif',
+                                    fontFamily: 'IBM Plex Sans, sans-serif',
                                     padding: '10px 12px',
                                     borderRadius: 8,
-                                    background: '#f8fafc'
+                                    background: 'var(--surface)'
                                 }}>
                                     <span>📲</span>
                                     Installation Guide
@@ -441,13 +441,13 @@ export default function ContactPage() {
                                     display: 'flex',
                                     alignItems: 'center',
                                     gap: 8,
-                                    color: '#525252',
+                                    color: 'var(--ink-soft)',
                                     textDecoration: 'none',
                                     fontSize: '14px',
-                                    fontFamily: 'Inter, system-ui, sans-serif',
+                                    fontFamily: 'IBM Plex Sans, sans-serif',
                                     padding: '10px 12px',
                                     borderRadius: 8,
-                                    background: '#f8fafc'
+                                    background: 'var(--surface)'
                                 }}>
                                     <span>🛡️</span>
                                     Security & Verification

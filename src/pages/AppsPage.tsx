@@ -11,37 +11,37 @@ export default function AppsPage() {
 
     const selectedCategoryData = categories.find(c => c.slug === selectedCategory);
     return (
-        <main style={{ background: '#f5f5f5', minHeight: '100vh' }}>
+        <main style={{ background: 'var(--surface)', minHeight: '100vh' }}>
             {/* Header */}
             <section style={{
-                background: '#fff',
+                background: 'var(--paper)',
                 padding: 'clamp(40px, 8vw, 64px) 24px',
-                borderBottom: '1px solid #e5e5e5'
+                borderBottom: '1px solid var(--line)'
             }}>
                 <div style={{ maxWidth: 1280, margin: '0 auto' }}>
                     <span style={{
                         display: 'inline-block',
                         fontSize: '12px',
                         fontWeight: 600,
-                        color: '#f97316',
+                        color: 'var(--kelly)',
                         textTransform: 'uppercase',
                         letterSpacing: '1px',
                         marginBottom: 12,
-                        fontFamily: 'Inter, system-ui, sans-serif'
+                        fontFamily: 'IBM Plex Sans, sans-serif'
                     }}>
                         App Catalog
                     </span>
                     <h1 style={{
                         fontSize: 'clamp(32px, 6vw, 48px)',
                         fontWeight: 700,
-                        color: '#0a0a0a',
+                        color: 'var(--ink)',
                         marginBottom: 12,
-                        fontFamily: 'Inter, system-ui, sans-serif'
+                        fontFamily: 'IBM Plex Sans, sans-serif'
                     }}>
                         Browse Apps
                     </h1>
                     <p style={{
-                        color: '#525252',
+                        color: 'var(--ink-soft)',
                         fontSize: '16px',
                         maxWidth: 500
                     }}>
@@ -53,8 +53,8 @@ export default function AppsPage() {
             {/* Mobile Filter Toggle */}
             <div className="hide-desktop" style={{
                 padding: '16px 24px',
-                background: '#fff',
-                borderBottom: '1px solid #e5e5e5'
+                background: 'var(--paper)',
+                borderBottom: '1px solid var(--line)'
             }}>
                 <Link
                     to={selectedCategory ? '/apps' : '#'}
@@ -64,13 +64,13 @@ export default function AppsPage() {
                         justifyContent: 'center',
                         gap: 8,
                         padding: '12px',
-                        background: selectedCategory ? 'rgba(249, 115, 22, 0.1)' : '#f5f5f5',
+                        background: selectedCategory ? 'var(--kelly-tint)' : 'var(--surface)',
                         borderRadius: 10,
-                        color: selectedCategory ? '#f97316' : '#525252',
+                        color: selectedCategory ? 'var(--kelly)' : 'var(--ink-soft)',
                         textDecoration: 'none',
                         fontWeight: 500,
                         fontSize: '14px',
-                        fontFamily: 'Inter, system-ui, sans-serif'
+                        fontFamily: 'IBM Plex Sans, sans-serif'
                     }}
                 >
                     <span>🔽</span>
@@ -84,20 +84,20 @@ export default function AppsPage() {
                     overflowX: 'auto',
                     paddingTop: 12,
                     marginTop: 12,
-                    borderTop: '1px solid #f5f5f5'
+                    borderTop: '1px solid var(--surface)'
                 }}>
                     <Link
                         to="/apps"
                         style={{
                             padding: '8px 16px',
-                            background: !selectedCategory ? '#f97316' : '#f5f5f5',
-                            color: !selectedCategory ? '#fff' : '#525252',
+                            background: !selectedCategory ? 'var(--kelly)' : 'var(--surface)',
+                            color: !selectedCategory ? '#0a0a0a' : 'var(--ink-soft)',
                             borderRadius: 100,
                             textDecoration: 'none',
                             fontSize: '13px',
                             fontWeight: 500,
                             whiteSpace: 'nowrap',
-                            fontFamily: 'Inter, system-ui, sans-serif'
+                            fontFamily: 'IBM Plex Sans, sans-serif'
                         }}
                     >
                         All
@@ -108,14 +108,14 @@ export default function AppsPage() {
                             to={`/apps?category=${cat.slug}`}
                             style={{
                                 padding: '8px 16px',
-                                background: selectedCategory === cat.slug ? '#f97316' : '#f5f5f5',
-                                color: selectedCategory === cat.slug ? '#fff' : '#525252',
+                                background: selectedCategory === cat.slug ? 'var(--kelly)' : 'var(--surface)',
+                                color: selectedCategory === cat.slug ? '#0a0a0a' : 'var(--ink-soft)',
                                 borderRadius: 100,
                                 textDecoration: 'none',
                                 fontSize: '13px',
                                 fontWeight: 500,
                                 whiteSpace: 'nowrap',
-                                fontFamily: 'Inter, system-ui, sans-serif'
+                                fontFamily: 'IBM Plex Sans, sans-serif'
                             }}
                         >
                             {cat.icon} {cat.name}
@@ -134,10 +134,10 @@ export default function AppsPage() {
             }}>
                 {/* Sidebar Filters - Desktop only */}
                 <aside className="hide-mobile" style={{
-                    background: '#fff',
+                    background: 'var(--paper)',
                     borderRadius: 20,
                     padding: 24,
-                    border: '1px solid #e5e5e5',
+                    border: '1px solid var(--line)',
                     height: 'fit-content',
                     position: 'sticky',
                     top: 88
@@ -145,9 +145,9 @@ export default function AppsPage() {
                     <h3 style={{
                         fontSize: '12px',
                         fontWeight: 600,
-                        color: '#737373',
+                        color: 'var(--ink-soft)',
                         marginBottom: 16,
-                        fontFamily: 'Inter, system-ui, sans-serif',
+                        fontFamily: 'IBM Plex Sans, sans-serif',
                         textTransform: 'uppercase',
                         letterSpacing: '0.5px'
                     }}>
@@ -169,18 +169,18 @@ export default function AppsPage() {
                                 padding: '12px 14px',
                                 borderRadius: 10,
                                 textDecoration: 'none',
-                                color: !selectedCategory ? '#f97316' : '#525252',
-                                background: !selectedCategory ? 'rgba(249, 115, 22, 0.08)' : 'transparent',
+                                color: !selectedCategory ? 'var(--kelly)' : 'var(--ink-soft)',
+                                background: !selectedCategory ? 'rgba(76, 184, 23, 0.08)' : 'transparent',
                                 fontSize: '14px',
                                 fontWeight: 500,
-                                fontFamily: 'Inter, system-ui, sans-serif'
+                                fontFamily: 'IBM Plex Sans, sans-serif'
                             }}>
                                 <span>📱</span>
                                 All Apps
                                 <span style={{
                                     marginLeft: 'auto',
-                                    background: '#f97316',
-                                    color: '#fff',
+                                    background: 'var(--kelly)',
+                                    color: '#0a0a0a',
                                     padding: '2px 8px',
                                     borderRadius: 100,
                                     fontSize: '12px',
@@ -201,10 +201,10 @@ export default function AppsPage() {
                                         padding: '12px 14px',
                                         borderRadius: 10,
                                         textDecoration: 'none',
-                                        color: selectedCategory === cat.slug ? '#f97316' : '#525252',
-                                        background: selectedCategory === cat.slug ? 'rgba(249, 115, 22, 0.08)' : 'transparent',
+                                        color: selectedCategory === cat.slug ? 'var(--kelly)' : 'var(--ink-soft)',
+                                        background: selectedCategory === cat.slug ? 'rgba(76, 184, 23, 0.08)' : 'transparent',
                                         fontSize: '14px',
-                                        fontFamily: 'Inter, system-ui, sans-serif',
+                                        fontFamily: 'IBM Plex Sans, sans-serif',
                                         transition: 'all 0.2s'
                                     }}>
                                         <span>{cat.icon}</span>
@@ -212,7 +212,7 @@ export default function AppsPage() {
                                         {count > 0 && (
                                             <span style={{
                                                 marginLeft: 'auto',
-                                                color: '#a3a3a3',
+                                                color: 'var(--ink-soft)',
                                                 fontSize: '13px'
                                             }}>
                                                 {count}
@@ -234,14 +234,14 @@ export default function AppsPage() {
                         marginBottom: 24
                     }}>
                         <span style={{
-                            color: '#737373',
+                            color: 'var(--ink-soft)',
                             fontSize: '14px',
-                            fontFamily: 'Inter, system-ui, sans-serif'
+                            fontFamily: 'IBM Plex Sans, sans-serif'
                         }}>
                             {selectedCategoryData ? (
-                                <>Showing <strong style={{ color: '#0a0a0a' }}>{filteredApps.length}</strong> {selectedCategoryData.name} app{filteredApps.length !== 1 ? 's' : ''}</>
+                                <>Showing <strong style={{ color: 'var(--ink)' }}>{filteredApps.length}</strong> {selectedCategoryData.name} app{filteredApps.length !== 1 ? 's' : ''}</>
                             ) : (
-                                <>Showing <strong style={{ color: '#0a0a0a' }}>{filteredApps.length}</strong> app{filteredApps.length !== 1 ? 's' : ''}</>
+                                <>Showing <strong style={{ color: 'var(--ink)' }}>{filteredApps.length}</strong> app{filteredApps.length !== 1 ? 's' : ''}</>
                             )}
                         </span>
                     </div>
@@ -255,10 +255,10 @@ export default function AppsPage() {
                             const latestVersion = app.versions[0];
                             return (
                                 <Link to={`/apps/${app.slug}`} key={app.slug} style={{
-                                    background: '#fff',
+                                    background: 'var(--paper)',
                                     borderRadius: 20,
                                     padding: 24,
-                                    border: '1px solid #e5e5e5',
+                                    border: '1px solid var(--line)',
                                     textDecoration: 'none',
                                     display: 'flex',
                                     flexDirection: 'column',
@@ -275,7 +275,7 @@ export default function AppsPage() {
                                             justifyContent: 'center',
                                             flexShrink: 0,
                                             overflow: 'hidden',
-                                            background: app.iconUrl ? '#fff' : 'linear-gradient(135deg, #f97316 0%, #ea580c 100%)',
+                                            background: app.iconUrl ? '#fff' : 'linear-gradient(135deg, var(--kelly) 0%, var(--kelly-deep) 100%)',
                                             boxShadow: '0 8px 20px rgba(0, 0, 0, 0.1)'
                                         }}>
                                             {app.iconUrl ? (
@@ -288,15 +288,15 @@ export default function AppsPage() {
                                             <h3 style={{
                                                 fontSize: '20px',
                                                 fontWeight: 600,
-                                                color: '#0a0a0a',
+                                                color: 'var(--ink)',
                                                 marginBottom: 6,
-                                                fontFamily: 'Inter, system-ui, sans-serif'
+                                                fontFamily: 'IBM Plex Sans, sans-serif'
                                             }}>
                                                 {app.name}
                                             </h3>
                                             <p style={{
                                                 fontSize: '14px',
-                                                color: '#737373',
+                                                color: 'var(--ink-soft)',
                                                 lineHeight: 1.5,
                                                 overflow: 'hidden',
                                                 display: '-webkit-box',
@@ -320,28 +320,28 @@ export default function AppsPage() {
                                             borderRadius: 100,
                                             fontSize: '12px',
                                             fontWeight: 600,
-                                            fontFamily: 'Inter, system-ui, sans-serif'
+                                            fontFamily: 'IBM Plex Sans, sans-serif'
                                         }}>
                                             ✓ Verified
                                         </span>
                                         <span style={{
-                                            background: 'rgba(249, 115, 22, 0.1)',
-                                            color: '#f97316',
+                                            background: 'var(--kelly-tint)',
+                                            color: 'var(--kelly)',
                                             padding: '6px 12px',
                                             borderRadius: 100,
                                             fontSize: '12px',
                                             fontWeight: 600,
-                                            fontFamily: 'Inter, system-ui, sans-serif'
+                                            fontFamily: 'IBM Plex Sans, sans-serif'
                                         }}>
                                             🛡️ Scanned
                                         </span>
                                         <span style={{
-                                            background: '#f5f5f5',
-                                            color: '#525252',
+                                            background: 'var(--surface)',
+                                            color: 'var(--ink-soft)',
                                             padding: '6px 12px',
                                             borderRadius: 100,
                                             fontSize: '12px',
-                                            fontFamily: 'Inter, system-ui, sans-serif'
+                                            fontFamily: 'IBM Plex Sans, sans-serif'
                                         }}>
                                             {app.category.icon} {app.category.name}
                                         </span>
@@ -353,23 +353,23 @@ export default function AppsPage() {
                                         alignItems: 'center',
                                         marginTop: 'auto',
                                         paddingTop: 16,
-                                        borderTop: '1px solid #f5f5f5'
+                                        borderTop: '1px solid var(--surface)'
                                     }}>
                                         <span style={{
                                             fontSize: '13px',
-                                            color: '#737373',
-                                            fontFamily: 'Inter, system-ui, sans-serif'
+                                            color: 'var(--ink-soft)',
+                                            fontFamily: 'IBM Plex Sans, sans-serif'
                                         }}>
                                             v{latestVersion.versionName} • {formatFileSize(latestVersion.size)}
                                         </span>
                                         <span style={{
-                                            background: '#f97316',
-                                            color: '#fff',
+                                            background: 'var(--kelly)',
+                                            color: '#0a0a0a',
                                             padding: '10px 20px',
                                             borderRadius: 10,
                                             fontSize: '14px',
                                             fontWeight: 600,
-                                            fontFamily: 'Inter, system-ui, sans-serif'
+                                            fontFamily: 'IBM Plex Sans, sans-serif'
                                         }}>
                                             Download
                                         </span>
@@ -383,10 +383,10 @@ export default function AppsPage() {
                         <div style={{
                             textAlign: 'center',
                             padding: '80px 24px',
-                            color: '#737373',
-                            background: '#fff',
+                            color: 'var(--ink-soft)',
+                            background: 'var(--paper)',
                             borderRadius: 20,
-                            border: '1px solid #e5e5e5'
+                            border: '1px solid var(--line)'
                         }}>
                             <div style={{ fontSize: '56px', marginBottom: 20 }}>📱</div>
                             <p style={{ fontSize: '16px' }}>No apps available yet. Check back soon!</p>

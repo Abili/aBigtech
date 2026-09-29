@@ -136,7 +136,7 @@ export default function AppPage() {
     };
 
     return (
-        <div style={{ background: '#f5f5f5', minHeight: '100vh' }}>
+        <div style={{ background: 'var(--surface)', minHeight: '100vh' }}>
             <SEO
                 title={`${app.name} - Download APK`}
                 description={`Download latest version of ${app.name} for Android. ${app.description.slice(0, 150)}...`}
@@ -145,29 +145,29 @@ export default function AppPage() {
 
             {/* Breadcrumb */}
             <div style={{
-                background: '#fff',
-                borderBottom: '1px solid #e5e5e5',
+                background: 'var(--paper)',
+                borderBottom: '1px solid var(--line)',
                 padding: '12px 24px'
             }}>
                 <div style={{ maxWidth: 1280, margin: '0 auto' }}>
                     <nav style={{
                         fontSize: '13px',
-                        color: '#737373',
-                        fontFamily: 'Inter, system-ui, sans-serif'
+                        color: 'var(--ink-soft)',
+                        fontFamily: 'IBM Plex Sans, sans-serif'
                     }}>
-                        <Link to="/" style={{ color: '#737373', textDecoration: 'none' }}>Home</Link>
-                        <span style={{ margin: '0 8px', color: '#d4d4d4' }}>›</span>
-                        <Link to="/apps" style={{ color: '#737373', textDecoration: 'none' }}>Apps</Link>
-                        <span style={{ margin: '0 8px', color: '#d4d4d4' }}>›</span>
-                        <span style={{ color: '#0a0a0a', fontWeight: 500 }}>{app.name}</span>
+                        <Link to="/" style={{ color: 'var(--ink-soft)', textDecoration: 'none' }}>Home</Link>
+                        <span style={{ margin: '0 8px', color: 'var(--line)' }}>›</span>
+                        <Link to="/apps" style={{ color: 'var(--ink-soft)', textDecoration: 'none' }}>Apps</Link>
+                        <span style={{ margin: '0 8px', color: 'var(--line)' }}>›</span>
+                        <span style={{ color: 'var(--ink)', fontWeight: 500 }}>{app.name}</span>
                     </nav>
                 </div>
             </div>
 
             {/* Header */}
             <header style={{
-                background: '#fafafa',
-                borderBottom: '1px solid #e5e5e5',
+                background: 'var(--surface)',
+                borderBottom: '1px solid var(--line)',
                 padding: 'clamp(32px, 5vw, 64px) 24px',
             }}>
                 <div style={{
@@ -197,15 +197,15 @@ export default function AppPage() {
                                 fontSize: 'clamp(32px, 5vw, 48px)',
                                 fontWeight: 800,
                                 margin: 0,
-                                color: '#0a0a0a',
+                                color: 'var(--ink)',
                                 letterSpacing: '-1px',
-                                fontFamily: 'Inter, system-ui, sans-serif'
+                                fontFamily: 'IBM Plex Sans, sans-serif'
                             }}>
                                 {app.name}
                             </h1>
                             <span style={{
-                                background: '#dcfce7',
-                                color: '#166534',
+                                background: 'var(--kelly-tint)',
+                                color: 'var(--kelly)',
                                 padding: '4px 12px',
                                 borderRadius: 100,
                                 fontSize: '13px',
@@ -219,11 +219,11 @@ export default function AppPage() {
 
 
                             <p style={{
-                                color: '#f97316',
+                                color: 'var(--kelly)',
                                 fontSize: '14px',
                                 fontWeight: 500,
                                 marginBottom: 6,
-                                fontFamily: 'Inter, system-ui, sans-serif'
+                                fontFamily: 'IBM Plex Sans, sans-serif'
                             }}>
                                 {app.developerName}
                             </p>
@@ -232,10 +232,10 @@ export default function AppPage() {
                                 <div style={{ display: 'flex', alignItems: 'center', gap: 4 }}>
                                     <span style={{ fontWeight: 700, fontSize: '18px' }}>{rating > 0 ? rating.toFixed(1) : 'New'}</span>
                                     <StarRating rating={rating} size={16} />
-                                    <span style={{ color: '#737373', fontSize: '14px' }}>({ratingCount.toLocaleString()})</span>
+                                    <span style={{ color: 'var(--ink-soft)', fontSize: '14px' }}>({ratingCount.toLocaleString()})</span>
                                 </div>
-                                <div style={{ width: 1, height: 24, background: '#e5e5e5' }} />
-                                <div style={{ fontSize: '14px', color: '#525252' }}>
+                                <div style={{ width: 1, height: 24, background: 'var(--line)' }} />
+                                <div style={{ fontSize: '14px', color: 'var(--ink-soft)' }}>
                                     {app.category.icon} {app.category.name}
                                 </div>
                             </div>
@@ -247,8 +247,8 @@ export default function AppPage() {
                                 <button
                                     onClick={handleDownload}
                                     style={{
-                                        background: '#f97316',
-                                        color: '#fff',
+                                        background: 'var(--kelly)',
+                                        color: '#0a0a0a',
                                         border: 'none',
                                         padding: '18px 36px',
                                         borderRadius: 14,
@@ -258,8 +258,8 @@ export default function AppPage() {
                                         display: 'flex',
                                         alignItems: 'center',
                                         gap: 12,
-                                        fontFamily: 'Inter, system-ui, sans-serif',
-                                        boxShadow: '0 8px 24px rgba(249, 115, 22, 0.4)',
+                                        fontFamily: 'IBM Plex Sans, sans-serif',
+                                        boxShadow: '0 8px 24px rgba(76, 184, 23, 0.4)',
                                         transition: 'all 0.2s ease'
                                     }}
                                 >
@@ -278,9 +278,9 @@ export default function AppPage() {
                                 <button
                                     onClick={handleDownload}
                                     style={{
-                                        background: '#1e293b',
-                                        color: '#fff',
-                                        border: 'none',
+                                        background: 'var(--surface)',
+                                        color: 'var(--ink)',
+                                        border: '1px solid var(--line)',
                                         padding: '18px 36px',
                                         borderRadius: 14,
                                         fontSize: '17px',
@@ -289,7 +289,7 @@ export default function AppPage() {
                                         display: 'flex',
                                         alignItems: 'center',
                                         gap: 12,
-                                        fontFamily: 'Inter, system-ui, sans-serif',
+                                        fontFamily: 'IBM Plex Sans, sans-serif',
                                         boxShadow: '0 8px 24px rgba(30, 41, 59, 0.3)',
                                         transition: 'all 0.2s ease'
                                     }}
@@ -317,9 +317,9 @@ export default function AppPage() {
                                     }
                                 }}
                                 style={{
-                                    background: '#fff',
-                                    color: '#0a0a0a',
-                                    border: '1px solid #e5e5e5',
+                                    background: 'var(--paper)',
+                                    color: 'var(--ink)',
+                                    border: '1px solid var(--line)',
                                     padding: '18px 24px',
                                     borderRadius: 14,
                                     fontSize: '17px',
@@ -329,12 +329,12 @@ export default function AppPage() {
                                     alignItems: 'center',
                                     gap: 12,
                                     marginTop: 12, // For Mobile wrapping
-                                    fontFamily: 'Inter, system-ui, sans-serif',
+                                    fontFamily: 'IBM Plex Sans, sans-serif',
                                     transition: 'all 0.2s ease',
                                     marginLeft: 12
                                 }}
-                                onMouseOver={(e) => e.currentTarget.style.background = '#f5f5f5'}
-                                onMouseOut={(e) => e.currentTarget.style.background = '#fff'}
+                                onMouseOver={(e) => e.currentTarget.style.background = 'var(--surface)'}
+                                onMouseOut={(e) => e.currentTarget.style.background = 'var(--paper)'}
                             >
                                 <span>📤</span>
                                 Share
@@ -346,8 +346,8 @@ export default function AppPage() {
 
             {/* Quick Info Bar */}
             <section style={{
-                background: '#fff',
-                borderBottom: '1px solid #e5e5e5',
+                background: 'var(--paper)',
+                borderBottom: '1px solid var(--line)',
                 padding: '12px 16px'
             }}>
                 <div style={{
@@ -357,24 +357,24 @@ export default function AppPage() {
                     gap: 16,
                     flexWrap: 'wrap',
                     fontSize: '13px',
-                    color: '#525252',
-                    fontFamily: 'Inter, system-ui, sans-serif'
+                    color: 'var(--ink-soft)',
+                    fontFamily: 'IBM Plex Sans, sans-serif'
                 }}>
                     <div style={{ display: 'flex', gap: 16, flexWrap: 'wrap', width: '100%' }}>
-                        <div><strong style={{ color: '#0a0a0a' }}>Version:</strong> {latestVersionName || latestVersion.versionName}</div>
-                        <div><strong style={{ color: '#0a0a0a' }}>Size:</strong> {formatFileSize(latestVersion.size)}</div>
-                        <div><strong style={{ color: '#0a0a0a' }}>Android:</strong> {app.requirements.minAndroidVersion}+</div>
-                        <div><strong style={{ color: '#0a0a0a' }}>Downloads:</strong> {downloadCount.toLocaleString()}+</div>
-                        <div><strong style={{ color: '#0a0a0a' }}>Updated:</strong> {latestVersion.releaseDate}</div>
+                        <div><strong style={{ color: 'var(--ink)' }}>Version:</strong> {latestVersionName || latestVersion.versionName}</div>
+                        <div><strong style={{ color: 'var(--ink)' }}>Size:</strong> {formatFileSize(latestVersion.size)}</div>
+                        <div><strong style={{ color: 'var(--ink)' }}>Android:</strong> {app.requirements.minAndroidVersion}+</div>
+                        <div><strong style={{ color: 'var(--ink)' }}>Downloads:</strong> {downloadCount.toLocaleString()}+</div>
+                        <div><strong style={{ color: 'var(--ink)' }}>Updated:</strong> {latestVersion.releaseDate}</div>
                     </div>
                     <div style={{ width: '100%', overflow: 'hidden', textOverflow: 'ellipsis' }}>
-                        <strong style={{ color: '#0a0a0a' }}>Package:</strong>{' '}
+                        <strong style={{ color: 'var(--ink)' }}>Package:</strong>{' '}
                         <code style={{
-                            background: '#f5f5f5',
+                            background: 'var(--surface)',
                             padding: '2px 8px',
                             borderRadius: 4,
                             fontSize: '12px',
-                            fontFamily: 'Roboto Mono, monospace',
+                            fontFamily: 'IBM Plex Mono, monospace',
                             wordBreak: 'break-all'
                         }}>
                             {app.packageName}
@@ -402,9 +402,9 @@ export default function AppPage() {
                             <h2 style={{
                                 fontSize: '18px',
                                 fontWeight: 600,
-                                color: '#0a0a0a',
+                                color: 'var(--ink)',
                                 marginBottom: 16,
-                                fontFamily: 'Inter, system-ui, sans-serif'
+                                fontFamily: 'IBM Plex Sans, sans-serif'
                             }}>
                                 Preview
                             </h2>
@@ -423,9 +423,9 @@ export default function AppPage() {
                                             height: 'auto',
                                             borderRadius: 16,
                                             boxShadow: '0 4px 12px rgba(0,0,0,0.1)',
-                                            border: '1px solid #e5e5e5',
+                                            border: '1px solid var(--line)',
                                             objectFit: 'contain',
-                                            background: '#fff'
+                                            background: 'var(--paper)'
                                         }}
                                     />
                                 ))}
@@ -436,17 +436,17 @@ export default function AppPage() {
                     {/* Features */}
                     {app.features && app.features.length > 0 && (
                         <section style={{
-                            background: '#fff',
+                            background: 'var(--paper)',
                             borderRadius: 20,
                             padding: 28,
-                            border: '1px solid #e5e5e5'
+                            border: '1px solid var(--line)'
                         }}>
                             <h2 style={{
                                 fontSize: '18px',
                                 fontWeight: 600,
-                                color: '#0a0a0a',
+                                color: 'var(--ink)',
                                 marginBottom: 16,
-                                fontFamily: 'Inter, system-ui, sans-serif'
+                                fontFamily: 'IBM Plex Sans, sans-serif'
                             }}>
                                 Features
                             </h2>
@@ -454,9 +454,9 @@ export default function AppPage() {
                                 margin: 0,
                                 paddingLeft: 20,
                                 fontSize: '15px',
-                                color: '#525252',
+                                color: 'var(--ink-soft)',
                                 lineHeight: 1.8,
-                                fontFamily: 'Inter, system-ui, sans-serif'
+                                fontFamily: 'IBM Plex Sans, sans-serif'
                             }}>
                                 {app.features.map((feature, i) => (
                                     <li key={i}>{feature}</li>
@@ -467,23 +467,23 @@ export default function AppPage() {
 
                     {/* Description */}
                     <section style={{
-                        background: '#fff',
+                        background: 'var(--paper)',
                         borderRadius: 20,
                         padding: 28,
-                        border: '1px solid #e5e5e5'
+                        border: '1px solid var(--line)'
                     }}>
                         <h2 style={{
                             fontSize: '18px',
                             fontWeight: 600,
-                            color: '#0a0a0a',
+                            color: 'var(--ink)',
                             marginBottom: 16,
-                            fontFamily: 'Inter, system-ui, sans-serif'
+                            fontFamily: 'IBM Plex Sans, sans-serif'
                         }}>
                             About this app
                         </h2>
                         <p style={{
                             fontSize: '15px',
-                            color: '#525252',
+                            color: 'var(--ink-soft)',
                             lineHeight: 1.8,
                             whiteSpace: 'pre-line'
                         }}>
@@ -493,10 +493,10 @@ export default function AppPage() {
 
                     {/* Changelog */}
                     <section style={{
-                        background: '#fff',
+                        background: 'var(--paper)',
                         borderRadius: 20,
                         padding: 28,
-                        border: '1px solid #e5e5e5'
+                        border: '1px solid var(--line)'
                     }}>
                         <div style={{
                             display: 'flex',
@@ -507,26 +507,26 @@ export default function AppPage() {
                             <h2 style={{
                                 fontSize: '18px',
                                 fontWeight: 600,
-                                color: '#0a0a0a',
-                                fontFamily: 'Inter, system-ui, sans-serif'
+                                color: 'var(--ink)',
+                                fontFamily: 'IBM Plex Sans, sans-serif'
                             }}>
                                 What's New
                             </h2>
                             <span style={{
-                                background: 'rgba(249, 115, 22, 0.1)',
-                                color: '#f97316',
+                                background: 'var(--kelly-tint)',
+                                color: 'var(--kelly)',
                                 padding: '4px 10px',
                                 borderRadius: 100,
                                 fontSize: '12px',
                                 fontWeight: 600,
-                                fontFamily: 'Inter, system-ui, sans-serif'
+                                fontFamily: 'IBM Plex Sans, sans-serif'
                             }}>
                                 v{latestVersionName || latestVersion.versionName}
                             </span>
                         </div>
                         <div style={{
                             fontSize: '14px',
-                            color: '#525252',
+                            color: 'var(--ink-soft)',
                             lineHeight: 1.8,
                             whiteSpace: 'pre-line'
                         }}>
@@ -536,17 +536,17 @@ export default function AppPage() {
 
                     {/* Permissions */}
                     <section style={{
-                        background: '#fff',
+                        background: 'var(--paper)',
                         borderRadius: 20,
                         padding: 28,
-                        border: '1px solid #e5e5e5'
+                        border: '1px solid var(--line)'
                     }}>
                         <h2 style={{
                             fontSize: '18px',
                             fontWeight: 600,
-                            color: '#0a0a0a',
+                            color: 'var(--ink)',
                             marginBottom: 16,
-                            fontFamily: 'Inter, system-ui, sans-serif'
+                            fontFamily: 'IBM Plex Sans, sans-serif'
                         }}>
                             Permissions
                         </h2>
@@ -557,20 +557,20 @@ export default function AppPage() {
                                     justifyContent: 'space-between',
                                     alignItems: 'center',
                                     padding: '14px 18px',
-                                    background: '#f5f5f5',
+                                    background: 'var(--surface)',
                                     borderRadius: 12
                                 }}>
                                     <div>
                                         <div style={{
                                             fontSize: '14px',
                                             fontWeight: 500,
-                                            color: '#0a0a0a',
+                                            color: 'var(--ink)',
                                             marginBottom: 2,
-                                            fontFamily: 'Inter, system-ui, sans-serif'
+                                            fontFamily: 'IBM Plex Sans, sans-serif'
                                         }}>
                                             {perm.name.replace(/_/g, ' ')}
                                         </div>
-                                        <div style={{ fontSize: '13px', color: '#737373' }}>
+                                        <div style={{ fontSize: '13px', color: 'var(--ink-soft)' }}>
                                             {perm.description}
                                         </div>
                                     </div>
@@ -582,7 +582,7 @@ export default function AppPage() {
                                         fontSize: '11px',
                                         fontWeight: 600,
                                         textTransform: 'uppercase',
-                                        fontFamily: 'Inter, system-ui, sans-serif'
+                                        fontFamily: 'IBM Plex Sans, sans-serif'
                                     }}>
                                         {perm.level}
                                     </span>
@@ -596,17 +596,17 @@ export default function AppPage() {
                 <div style={{ display: 'flex', flexDirection: 'column', gap: 24 }}>
                     {/* Security Card */}
                     <section style={{
-                        background: '#fff',
+                        background: 'var(--paper)',
                         borderRadius: 20,
                         padding: 24,
-                        border: '1px solid #e5e5e5'
+                        border: '1px solid var(--line)'
                     }}>
                         <h3 style={{
                             fontSize: '16px',
                             fontWeight: 600,
-                            color: '#0a0a0a',
+                            color: 'var(--ink)',
                             marginBottom: 20,
-                            fontFamily: 'Inter, system-ui, sans-serif'
+                            fontFamily: 'IBM Plex Sans, sans-serif'
                         }}>
                             Security
                         </h3>
@@ -632,15 +632,15 @@ export default function AppPage() {
                                     <div style={{
                                         fontSize: '14px',
                                         fontWeight: 500,
-                                        color: '#0a0a0a',
-                                        fontFamily: 'Inter, system-ui, sans-serif'
+                                        color: 'var(--ink)',
+                                        fontFamily: 'IBM Plex Sans, sans-serif'
                                     }}>
                                         Malware Scan
                                     </div>
                                     <div style={{
                                         fontSize: '13px',
                                         color: '#22c55e',
-                                        fontFamily: 'Inter, system-ui, sans-serif'
+                                        fontFamily: 'IBM Plex Sans, sans-serif'
                                     }}>
                                         Clean - {latestVersion.scanDate}
                                     </div>
@@ -654,7 +654,7 @@ export default function AppPage() {
                                 <span style={{
                                     width: 44,
                                     height: 44,
-                                    background: 'rgba(249, 115, 22, 0.1)',
+                                    background: 'var(--kelly-tint)',
                                     borderRadius: 12,
                                     display: 'flex',
                                     alignItems: 'center',
@@ -667,15 +667,15 @@ export default function AppPage() {
                                     <div style={{
                                         fontSize: '14px',
                                         fontWeight: 500,
-                                        color: '#0a0a0a',
-                                        fontFamily: 'Inter, system-ui, sans-serif'
+                                        color: 'var(--ink)',
+                                        fontFamily: 'IBM Plex Sans, sans-serif'
                                     }}>
                                         Signed Package
                                     </div>
                                     <div style={{
                                         fontSize: '13px',
-                                        color: '#737373',
-                                        fontFamily: 'Inter, system-ui, sans-serif'
+                                        color: 'var(--ink-soft)',
+                                        fontFamily: 'IBM Plex Sans, sans-serif'
                                     }}>
                                         Verified signature
                                     </div>
@@ -686,17 +686,17 @@ export default function AppPage() {
 
                     {/* Version Info Card */}
                     <section style={{
-                        background: '#fff',
+                        background: 'var(--paper)',
                         borderRadius: 20,
                         padding: 24,
-                        border: '1px solid #e5e5e5'
+                        border: '1px solid var(--line)'
                     }}>
                         <h3 style={{
                             fontSize: '16px',
                             fontWeight: 600,
-                            color: '#0a0a0a',
+                            color: 'var(--ink)',
                             marginBottom: 20,
-                            fontFamily: 'Inter, system-ui, sans-serif'
+                            fontFamily: 'IBM Plex Sans, sans-serif'
                         }}>
                             App Info
                         </h3>
@@ -716,15 +716,15 @@ export default function AppPage() {
                                     display: 'flex',
                                     justifyContent: 'space-between',
                                     paddingBottom: 12,
-                                    borderBottom: '1px solid #f5f5f5'
+                                    borderBottom: '1px solid var(--surface)'
                                 }}>
-                                    <span style={{ color: '#737373', fontFamily: 'Inter, system-ui, sans-serif' }}>
+                                    <span style={{ color: 'var(--ink-soft)', fontFamily: 'IBM Plex Sans, sans-serif' }}>
                                         {item.label}
                                     </span>
                                     <span style={{
-                                        color: '#0a0a0a',
+                                        color: 'var(--ink)',
                                         fontWeight: 500,
-                                        fontFamily: 'Inter, system-ui, sans-serif'
+                                        fontFamily: 'IBM Plex Sans, sans-serif'
                                     }}>
                                         {item.value}
                                     </span>
@@ -735,25 +735,25 @@ export default function AppPage() {
 
                     {/* Report Card */}
                     <section style={{
-                        background: '#fafafa',
+                        background: 'var(--surface)',
                         borderRadius: 20,
                         padding: 24,
-                        border: '1px solid #e5e5e5'
+                        border: '1px solid var(--line)'
                     }}>
                         <h3 style={{
                             fontSize: '14px',
                             fontWeight: 500,
-                            color: '#0a0a0a',
+                            color: 'var(--ink)',
                             marginBottom: 8,
-                            fontFamily: 'Inter, system-ui, sans-serif'
+                            fontFamily: 'IBM Plex Sans, sans-serif'
                         }}>
                             Found an issue?
                         </h3>
                         <p style={{
                             fontSize: '13px',
-                            color: '#525252',
+                            color: 'var(--ink-soft)',
                             marginBottom: 16,
-                            fontFamily: 'Inter, system-ui, sans-serif'
+                            fontFamily: 'IBM Plex Sans, sans-serif'
                         }}>
                             Report security concerns or bugs to help keep our platform safe.
                         </p>
@@ -761,11 +761,11 @@ export default function AppPage() {
                             display: 'inline-flex',
                             alignItems: 'center',
                             gap: 6,
-                            color: '#f97316',
+                            color: 'var(--kelly)',
                             fontSize: '14px',
                             fontWeight: 500,
                             textDecoration: 'none',
-                            fontFamily: 'Inter, system-ui, sans-serif'
+                            fontFamily: 'IBM Plex Sans, sans-serif'
                         }}>
                             Report Issue
                             <span>→</span>

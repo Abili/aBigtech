@@ -60,7 +60,7 @@ export default function SearchModal({ isOpen, onClose }: SearchModalProps) {
         >
             <div
                 style={{
-                    background: '#fff',
+                    background: 'var(--paper)',
                     borderRadius: 16,
                     width: '100%',
                     maxWidth: 560,
@@ -73,12 +73,12 @@ export default function SearchModal({ isOpen, onClose }: SearchModalProps) {
                 {/* Search Input */}
                 <div style={{
                     padding: '16px 20px',
-                    borderBottom: '1px solid #e5e5e5',
+                    borderBottom: '1px solid var(--line)',
                     display: 'flex',
                     alignItems: 'center',
                     gap: 12
                 }}>
-                    <span style={{ fontSize: '20px', color: '#737373' }}>🔍</span>
+                    <span style={{ fontSize: '20px', color: 'var(--ink-soft)' }}>🔍</span>
                     <input
                         ref={inputRef}
                         type="text"
@@ -90,22 +90,22 @@ export default function SearchModal({ isOpen, onClose }: SearchModalProps) {
                             border: 'none',
                             outline: 'none',
                             fontSize: '16px',
-                            fontFamily: 'Inter, system-ui, sans-serif',
-                            color: '#0a0a0a',
+                            fontFamily: 'IBM Plex Sans, sans-serif',
+                            color: 'var(--ink)',
                             background: 'transparent'
                         }}
                     />
                     <button
                         onClick={onClose}
                         style={{
-                            background: '#f5f5f5',
+                            background: 'var(--surface)',
                             border: 'none',
                             borderRadius: 6,
                             padding: '4px 8px',
                             fontSize: '12px',
-                            color: '#737373',
+                            color: 'var(--ink-soft)',
                             cursor: 'pointer',
-                            fontFamily: 'Inter, system-ui, sans-serif'
+                            fontFamily: 'IBM Plex Sans, sans-serif'
                         }}
                     >
                         ESC
@@ -122,9 +122,9 @@ export default function SearchModal({ isOpen, onClose }: SearchModalProps) {
                         <div style={{
                             padding: '40px 20px',
                             textAlign: 'center',
-                            color: '#737373',
+                            color: 'var(--ink-soft)',
                             fontSize: '14px',
-                            fontFamily: 'Inter, system-ui, sans-serif'
+                            fontFamily: 'IBM Plex Sans, sans-serif'
                         }}>
                             Start typing to search apps...
                         </div>
@@ -132,9 +132,9 @@ export default function SearchModal({ isOpen, onClose }: SearchModalProps) {
                         <div style={{
                             padding: '40px 20px',
                             textAlign: 'center',
-                            color: '#737373',
+                            color: 'var(--ink-soft)',
                             fontSize: '14px',
-                            fontFamily: 'Inter, system-ui, sans-serif'
+                            fontFamily: 'IBM Plex Sans, sans-serif'
                         }}>
                             No apps found for "{query}"
                         </div>
@@ -153,7 +153,7 @@ export default function SearchModal({ isOpen, onClose }: SearchModalProps) {
                                     textDecoration: 'none',
                                     transition: 'background 0.15s ease'
                                 }}
-                                onMouseEnter={e => e.currentTarget.style.background = '#f5f5f5'}
+                                onMouseEnter={e => e.currentTarget.style.background = 'var(--surface)'}
                                 onMouseLeave={e => e.currentTarget.style.background = 'transparent'}
                             >
                                 <div style={{
@@ -165,7 +165,7 @@ export default function SearchModal({ isOpen, onClose }: SearchModalProps) {
                                     justifyContent: 'center',
                                     flexShrink: 0,
                                     overflow: 'hidden',
-                                    background: app.iconUrl ? '#fff' : 'linear-gradient(135deg, #f97316 0%, #ea580c 100%)'
+                                    background: app.iconUrl ? '#fff' : 'linear-gradient(135deg, var(--kelly) 0%, var(--kelly-deep) 100%)'
                                 }}>
                                     {app.iconUrl ? (
                                         <img src={app.iconUrl} alt={app.name} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
@@ -177,16 +177,16 @@ export default function SearchModal({ isOpen, onClose }: SearchModalProps) {
                                     <div style={{
                                         fontSize: '15px',
                                         fontWeight: 600,
-                                        color: '#0a0a0a',
+                                        color: 'var(--ink)',
                                         marginBottom: 2,
-                                        fontFamily: 'Inter, system-ui, sans-serif'
+                                        fontFamily: 'IBM Plex Sans, sans-serif'
                                     }}>
                                         {app.name}
                                     </div>
                                     <div style={{
                                         fontSize: '13px',
-                                        color: '#737373',
-                                        fontFamily: 'Inter, system-ui, sans-serif',
+                                        color: 'var(--ink-soft)',
+                                        fontFamily: 'IBM Plex Sans, sans-serif',
                                         overflow: 'hidden',
                                         textOverflow: 'ellipsis',
                                         whiteSpace: 'nowrap'
@@ -195,13 +195,13 @@ export default function SearchModal({ isOpen, onClose }: SearchModalProps) {
                                     </div>
                                 </div>
                                 <span style={{
-                                    background: 'rgba(249, 115, 22, 0.1)',
-                                    color: '#f97316',
+                                    background: 'var(--kelly-tint)',
+                                    color: 'var(--kelly)',
                                     padding: '4px 10px',
                                     borderRadius: 6,
                                     fontSize: '12px',
                                     fontWeight: 500,
-                                    fontFamily: 'Inter, system-ui, sans-serif'
+                                    fontFamily: 'IBM Plex Sans, sans-serif'
                                 }}>
                                     {app.category.name}
                                 </span>

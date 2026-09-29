@@ -17,6 +17,7 @@ export default function Footer() {
             links: [
                 { label: 'About Us', path: '/about' },
                 { label: 'Security', path: '/security' },
+                { label: 'Talent', path: 'https://talent.abigtech256.com', external: true },
             ]
         },
         {
@@ -39,11 +40,11 @@ export default function Footer() {
     return (
         <footer style={{
             width: '100%',
-            background: '#fafafa',
-            color: '#525252',
+            background: 'var(--surface)',
+            color: 'var(--ink-soft)',
             padding: 'clamp(40px, 8vw, 64px) 24px clamp(24px, 4vw, 32px)',
             boxSizing: 'border-box',
-            borderTop: '1px solid #e5e5e5'
+            borderTop: '1px solid var(--line)'
         }}>
             <div style={{
                 maxWidth: 1400,
@@ -59,11 +60,11 @@ export default function Footer() {
                     {footerSections.map(section => (
                         <div key={section.title}>
                             <h4 style={{
-                                color: '#0a0a0a',
+                                color: 'var(--ink)',
                                 fontSize: '14px',
                                 fontWeight: 600,
                                 marginBottom: 16,
-                                fontFamily: 'Inter, system-ui, sans-serif',
+                                fontFamily: 'IBM Plex Sans, sans-serif',
                                 textTransform: 'uppercase',
                                 letterSpacing: '0.5px'
                             }}>
@@ -79,20 +80,39 @@ export default function Footer() {
                             }}>
                                 {section.links.map(link => (
                                     <li key={link.path}>
-                                        <Link
-                                            to={link.path}
-                                            style={{
-                                                color: '#525252',
-                                                textDecoration: 'none',
-                                                fontSize: '14px',
-                                                fontFamily: 'Inter, system-ui, sans-serif',
-                                                transition: 'color 0.2s ease'
-                                            }}
-                                            onMouseOver={e => e.currentTarget.style.color = '#f97316'}
-                                            onMouseOut={e => e.currentTarget.style.color = '#525252'}
-                                        >
-                                            {link.label}
-                                        </Link>
+                                        {link.external ? (
+                                            <a
+                                                href={link.path}
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                                style={{
+                                                    color: 'var(--ink-soft)',
+                                                    textDecoration: 'none',
+                                                    fontSize: '14px',
+                                                    fontFamily: 'IBM Plex Sans, sans-serif',
+                                                    transition: 'color 0.2s ease'
+                                                }}
+                                                onMouseOver={e => e.currentTarget.style.color = 'var(--kelly)'}
+                                                onMouseOut={e => e.currentTarget.style.color = 'var(--ink-soft)'}
+                                            >
+                                                {link.label} ↗
+                                            </a>
+                                        ) : (
+                                            <Link
+                                                to={link.path}
+                                                style={{
+                                                    color: 'var(--ink-soft)',
+                                                    textDecoration: 'none',
+                                                    fontSize: '14px',
+                                                    fontFamily: 'IBM Plex Sans, sans-serif',
+                                                    transition: 'color 0.2s ease'
+                                                }}
+                                                onMouseOver={e => e.currentTarget.style.color = 'var(--kelly)'}
+                                                onMouseOut={e => e.currentTarget.style.color = 'var(--ink-soft)'}
+                                            >
+                                                {link.label}
+                                            </Link>
+                                        )}
                                     </li>
                                 ))}
                             </ul>
@@ -102,7 +122,7 @@ export default function Footer() {
 
                 {/* Bottom bar */}
                 <div style={{
-                    borderTop: '1px solid #e5e5e5',
+                    borderTop: '1px solid var(--line)',
                     paddingTop: 24,
                     display: 'flex',
                     justifyContent: 'space-between',
@@ -115,16 +135,16 @@ export default function Footer() {
                         alignItems: 'center',
                         gap: 8,
                         fontSize: '14px',
-                        fontFamily: 'Inter, system-ui, sans-serif'
+                        fontFamily: 'IBM Plex Sans, sans-serif'
                     }}>
                         <span style={{ fontSize: '20px' }}>📱</span>
-                        <span style={{ fontWeight: 600, color: '#0a0a0a' }}>aBig Tech</span>
+                        <span style={{ fontWeight: 600, color: 'var(--ink)' }}>aBig Tech</span>
                     </div>
 
                     <div style={{
                         fontSize: '13px',
-                        fontFamily: 'Inter, system-ui, sans-serif',
-                        color: '#737373'
+                        fontFamily: 'IBM Plex Sans, sans-serif',
+                        color: 'var(--ink-soft)'
                     }}>
                         © {currentYear} aBig Tech. All rights reserved.
                     </div>
@@ -136,12 +156,12 @@ export default function Footer() {
                     }}>
                         <span style={{
                             fontSize: '12px',
-                            color: '#737373',
+                            color: 'var(--ink-soft)',
                             display: 'flex',
                             alignItems: 'center',
                             gap: 6
                         }}>
-                            <span style={{ color: '#22c55e' }}>●</span>
+                            <span style={{ color: 'var(--kelly)' }}>●</span>
                             All apps verified & scanned
                         </span>
                     </div>
@@ -154,7 +174,7 @@ export default function Footer() {
                     marginTop: 20,
                     opacity: 0.3
                 }}>
-                    <Link to="/admin" style={{ fontSize: '10px', textDecoration: 'none', color: '#a3a3a3' }}>
+                    <Link to="/admin" style={{ fontSize: '10px', textDecoration: 'none', color: 'var(--ink-soft)' }}>
                         🔒
                     </Link>
                 </div>
