@@ -68,7 +68,7 @@ export default function PrivacyPolicyPage() {
                             paddingLeft: 24,
                             margin: 0
                         }}>
-                            <li style={{ marginBottom: 8 }}><strong>Account Data:</strong> If you sign in with Google (to leave a review or access admin tools), we receive your name, email, and profile photo from Google.</li>
+                            <li style={{ marginBottom: 8 }}><strong>Account Data:</strong> If you sign in with Google (to leave a review), we receive your name, email, and profile photo from Google.</li>
                             <li style={{ marginBottom: 8 }}><strong>Reviews:</strong> If you write a review, your name, photo, star rating, and comment are stored and shown publicly on the relevant app page.</li>
                             <li style={{ marginBottom: 8 }}><strong>Usage Data:</strong> Basic analytics including page views and download counts.</li>
                             <li><strong>Technical Data:</strong> Standard server logs (IP address, browser type, device info) for security and debugging purposes.</li>

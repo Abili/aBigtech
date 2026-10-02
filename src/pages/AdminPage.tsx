@@ -204,7 +204,7 @@ export default function AdminPage() {
                 minHeight: '80vh',
                 fontFamily: 'IBM Plex Sans, sans-serif'
             }}>
-                <h1 style={{ marginBottom: 24 }}>Admin Login</h1>
+                <h1 style={{ marginBottom: 24 }}>Sign in</h1>
                 <button
                     onClick={handleLogin}
                     style={{
@@ -227,8 +227,8 @@ export default function AdminPage() {
     if (user.email !== ADMIN_EMAIL) {
         return (
             <div style={{ padding: 40, textAlign: 'center', fontFamily: 'IBM Plex Sans, sans-serif' }}>
-                <h1 style={{ color: '#ef4444' }}>Access Denied</h1>
-                <p>You are not authorized to view this page.</p>
+                <h1 style={{ color: '#ef4444' }}>Not available</h1>
+                <p>This account can't view this page.</p>
                 <div style={{ marginTop: 16, color: 'var(--ink-soft)' }}>Signed in as: {user.email}</div>
                 <button
                     onClick={handleLogout}

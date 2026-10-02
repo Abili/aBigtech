@@ -33,7 +33,7 @@ Key Features:
 • Queue-based playback across all screens
 • Group music sessions with real-time sync
 • Playlist sharing and collaboration
-• Pending song approval for group admins
+• Pending song approval for group owners
 • Light and dark theme support
 • Local music library integration`,
         shortDescription: 'Social music player with group listening sessions',
