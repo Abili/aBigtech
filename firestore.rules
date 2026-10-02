@@ -1,36 +1,90 @@
 rules_version = '2';
+// Single ruleset for the shared abigtech-c2f76 Firestore database, used by BOTH
+// abigtech256.com (apps/*) and talent.abigtech256.com (candidates/*, assessments/*).
+// Deploying rules from anywhere replaces the whole file — keep both sections here.
 service cloud.firestore {
   match /databases/{database}/documents {
-    
-    // Helper functions
+
     function isAuthenticated() {
       return request.auth != null;
     }
-    
+
     function isAdmin() {
-      return request.auth.token.email == 'abiliisaac@gmail.com';
+      return isAuthenticated() && request.auth.token.email == 'abiliisaac@gmail.com';
     }
 
-    // Apps collection: Public read, Auth write (for stats/ratings)
+    function isOwner(uid) {
+      return isAuthenticated() && request.auth.uid == uid;
+    }
+
+    // ---------------- abigtech256.com ----------------
+
     match /apps/{appId} {
+      // Public: the site (and the app's update check) reads version info, ratings, download counts.
       allow read: if true;
-      // Allow authenticated users to update stats (ratings, downloads)
-      allow write: if isAuthenticated();
-      
-      // Reviews subcollection: Public read, Auth write
-      match /reviews/{reviewId} {
-        allow read: if true;
-        allow create: if isAuthenticated() && 
-                     request.resource.data.userId == request.auth.uid;
-        allow update, delete: if isAuthenticated() && 
-                             (request.auth.uid == resource.data.userId || isAdmin());
+      allow create, delete: if isAdmin();
+      // Non-admins may only bump the download counter or the rating aggregates —
+      // never updateUrl/version fields, which would let anyone swap the APK being served.
+      allow update: if isAdmin()
+                    || (isAuthenticated() && isDownloadIncrement())
+                    || (isAuthenticated() && isRatingUpdate());
+
+      function isDownloadIncrement() {
+        return request.resource.data.diff(resource.data).affectedKeys().hasOnly(['downloads'])
+          && request.resource.data.downloads == resource.data.get('downloads', 0) + 1;
       }
 
-      // Downloads subcollection: Public create (for analytics), Admin read
-      match /downloads/{downloadId} {
-        allow create: if true; // Allow anyone to log (fixes cache issue), client sends userId if auth
-        allow read: if isAdmin(); // Only admin can view analytics
+      function isRatingUpdate() {
+        return request.resource.data.diff(resource.data).affectedKeys().hasOnly(['rating', 'ratingCount'])
+          && request.resource.data.ratingCount == resource.data.get('ratingCount', 0) + 1
+          && request.resource.data.rating is number
+          && request.resource.data.rating >= 1
+          && request.resource.data.rating <= 5;
       }
+
+      match /reviews/{reviewId} {
+        allow read: if true;
+        allow create: if isAuthenticated()
+                      && request.resource.data.userId == request.auth.uid
+                      && request.resource.data.rating is number
+                      && request.resource.data.rating >= 1
+                      && request.resource.data.rating <= 5;
+        allow update, delete: if isAuthenticated()
+                              && (resource.data.userId == request.auth.uid || isAdmin());
+      }
+
+      match /downloads/{downloadId} {
+        allow create: if true;
+        allow read: if isAdmin();
+      }
+    }
+
+    // ---------------- talent.abigtech256.com ----------------
+
+    match /candidates/{uid} {
+      allow read: if isOwner(uid) || isAdmin();
+      allow create: if isOwner(uid)
+                    && request.resource.data.status == 'pending';
+      allow update: if isAdmin()
+                    || (isOwner(uid) && request.resource.data.status == resource.data.status);
+      allow delete: if false;
+    }
+
+    match /assessments/{uid} {
+      allow read: if isOwner(uid) || isAdmin();
+      // startedAt must be the server's clock, so a candidate can't back-date or future-date their timer.
+      allow create: if isOwner(uid)
+                    && get(/databases/$(database)/documents/candidates/$(uid)).data.status == 'approved'
+                    && request.resource.data.startedAt == request.time
+                    && request.resource.data.submitted == false;
+      // A candidate's only allowed write is the one-time submission.
+      allow update: if isAdmin()
+                    || (isOwner(uid)
+                        && resource.data.submitted == false
+                        && request.resource.data.submitted == true
+                        && request.resource.data.diff(resource.data).affectedKeys()
+                             .hasOnly(['submitted', 'repoLink', 'repoMismatch', 'late']));
+      allow delete: if false;
     }
   }
 }
